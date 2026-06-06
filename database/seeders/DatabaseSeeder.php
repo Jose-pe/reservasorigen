@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Admin_Reservas',
-            'email' => 'admin@catedral.com',
+            'email' => 'admin@origen.com',
             'role' => 'admin',
-            'password' => Hash::make('pass-catedral-01'),
+            'password' => Hash::make('pass-origen-01'),
         ]);
 
 

@@ -1,0 +1,239 @@
+    
+    body{
+      margin:0;
+      min-height:100vh;
+      background:#f5f5f5;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      font-family:'Montserrat', sans-serif;
+    }
+
+    .register-card{
+      width:100%;
+      max-width:520px;
+      background:white;
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:0 10px 40px rgba(0,0,0,.08);
+    }
+
+    .card-content{
+      padding:42px 34px 55px;
+    }
+
+    /* TITLE */
+
+    .title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:4rem;
+      font-weight:600;
+      text-align:center;
+      color:#1f1f1f;
+      margin-bottom:18px;
+    }
+
+    
+
+    .subtitle{
+      text-align:center;
+      color:#9a9a9a;
+      font-size:1.2rem;
+      line-height:1.5;
+      margin-bottom:34px;
+    }
+
+    /* GOOGLE BUTTON */
+
+    .google-btn{
+      width:100%;
+      height:58px;
+      border:1px solid #dddddd;
+      border-radius:16px;
+      background:#f7f7f7;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      font-size:1rem;
+      font-weight:500;
+      color:#555;
+      margin-bottom:22px;
+    }
+
+    /* INPUTS */
+
+    .form-control-custom{
+      height:64px;
+      border:1px solid #dddddd;
+      border-radius:16px;
+      background:#fafafa;
+      padding-left:52px;
+      font-size:1rem;
+      color:#333;
+    }
+
+    .form-control-custom:focus{
+      border-color:#b08954;
+      box-shadow:none;
+      background:white;
+    }
+
+    .input-group-custom{
+      position:relative;
+      margin-bottom:18px;
+    }
+
+    .input-icon{
+      position:absolute;
+      left:18px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#999;
+      font-size:1.1rem;
+      z-index:1;
+    }
+
+    /* PHONE */
+
+    
+
+    /* CHECK */
+
+    .custom-check{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      margin-top:24px;
+      margin-bottom:34px;
+    }
+
+    .custom-check input{
+      accent-color:#b08954;
+      margin-top:4px;
+      width:18px;
+      height:18px;
+    }
+
+    .custom-check label{
+      color:#666;
+      line-height:1.6;
+      font-size:1rem;
+    }
+
+    /* BUTTON */
+
+    .register-btn{
+      width:100%;
+      height:66px;
+      border:none;
+      border-radius:16px;
+      background:#b08954;
+      color:white;
+      font-size:1.1rem;
+      font-weight:700;
+      transition:.25s;
+      box-shadow:0 8px 18px rgba(0,0,0,.12);
+    }
+
+    .register-btn:hover{
+      background:#9f7744;
+      transform:translateY(-2px);
+    }
+
+    /* LOGIN */
+
+    .login-link{
+      text-align:center;
+      margin-top:36px;
+      font-size:1rem;
+      color:#666;
+    }
+
+    .login-link a{
+      color:#b08954;
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    /* FOOTER */
+
+    .bottom-bar{
+      border-top:1px solid #eeeeee;
+      padding:18px 24px;
+    }
+
+    .back-btn{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:1px solid #b08954;
+      background:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#b08954;
+      font-size:1rem;
+      transition:.2s;
+    }
+
+    .back-btn:hover{
+      background:#b08954;
+      color:white;
+    }
+
+    .powered{
+      text-align:center;
+      margin-top:26px;
+      color:#b5b5b5;
+      font-size:.95rem;
+    }
+
+    .powered strong{
+      color:#ff4d73;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .card-content{
+        padding:34px 22px 45px;
+      }
+
+      .title{
+        font-size:2.8rem;
+      }
+
+      .subtitle{
+        font-size:1rem;
+      }
+
+      .form-control-custom{
+        height:58px;
+      }
+
+      .register-btn{
+        height:60px;
+        font-size:1rem;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .title{
+        font-size:2.2rem;
+      }
+
+      .subtitle{
+        font-size:.95rem;
+      }
+
+      .google-btn{
+        font-size:.92rem;
+      }
+
+    }
+

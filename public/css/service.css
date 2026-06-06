@@ -1,0 +1,252 @@
+
+
+    body{
+      margin:0;
+      min-height:100vh;
+      background:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600&auto=format&fit=crop') center center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      font-family:'Montserrat', sans-serif;
+    }
+
+    .main-card{
+      width:100%;
+      max-width:720px;
+      background:#f7f7f7;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
+    }
+
+    /* HEADER */
+
+    .top-bar{
+      padding:18px 24px;
+      border-bottom:1px solid #dddddd;
+    }
+
+    .logo{
+      text-align:center;
+      line-height:1;
+    }
+
+    .logo h1{
+      margin:0;
+      font-size:3rem;
+      font-weight:300;
+      letter-spacing:8px;
+      color:#222;
+    }
+
+    .logo span{
+      font-size:.52rem;
+      letter-spacing:4px;
+      color:#555;
+    }
+
+    .top-icon{
+      text-decoration:none;
+      color:#111;
+      font-size:1rem;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    /* CONTENT */
+
+    .content{
+      padding:40px 55px 70px;
+    }
+
+    .top-pills{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:45px;
+    }
+
+    .info-pill{
+      background:white;
+      border:1px solid #dddddd;
+      padding:9px 16px;
+      border-radius:30px;
+      color:#666;
+      font-size:.95rem;
+      font-weight:500;
+    }
+
+    .title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:4rem;
+      text-align:center;
+      color:#111;
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#999;
+      margin-bottom:28px;
+      font-size:1.05rem;
+    }
+
+    .arrow-icon{
+      text-align:center;
+      color:#c0c0c0;
+      font-size:1.2rem;
+      margin-bottom:18px;
+    }
+
+   
+    /* TIME LIST */
+
+    .time-list{
+      max-width:420px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .time-btn{
+      width:100%;
+      height:58px;
+      background:white;
+      border:1px solid #d7d7d7;
+      border-radius:14px;
+      font-size:1.1rem;
+      font-weight:500;
+      color:#333;
+      transition:.25s;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      text-decoration: none !important;
+    }
+
+    .time-btn:hover{
+      background:#fafafa;
+      transform:translateY(-2px);
+      border-color:#111;
+    }
+
+    .time-btn.active{
+      background:black;
+      color:white;
+      border-color:black;
+    }
+
+    /* BOTTOM */
+
+    .bottom{
+      border-top:1px solid #dddddd;
+      padding:18px 24px;
+    }
+
+    .progress-wrapper{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .back-btn{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:1px solid #222;
+      background:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:1.2rem;
+      transition:.2s;
+    }
+
+    .back-btn:hover{
+      background:#f1f1f1;
+    }
+
+    .progress{
+      flex:1;
+      height:6px;
+      background:#dcdcdc;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .progress-bar{
+      width:50%;
+      background:black;
+    }
+
+    .progress-bar-h{
+      width:60%;
+      background:black;
+    }
+
+    /* FOOTER */
+
+    .footer{
+      background:#ececec;
+      text-align:center;
+      padding:20px;
+      color:#a1a1a1;
+      font-size:.9rem;
+    }
+
+    .footer strong{
+      color:#ff4d73;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .content{
+        padding:35px 22px 60px;
+      }
+
+      .title{
+        font-size:2.8rem;
+      }
+
+      .logo h1{
+        font-size:2rem;
+        letter-spacing:5px;
+      }
+
+      .logo span{
+        font-size:.42rem;
+      }
+
+      .time-btn{
+        height:54px;
+        font-size:1rem;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .title{
+        font-size:2.3rem;
+      }
+
+      .top-pills{
+        gap:8px;
+      }
+
+      .info-pill{
+        font-size:.82rem;
+        padding:7px 12px;
+      }
+
+    }
+

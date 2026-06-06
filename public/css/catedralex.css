@@ -1,0 +1,170 @@
+
+        :root {
+            --bg-color: #4a3b32; /* Color de fondo marrón oscuro */
+            --text-color: #dfcdab; /* Color beige/dorado para texto y bordes */
+            --border-color: rgba(223, 205, 171, 0.3); /* Bordes sutiles */
+        }
+
+.btn-moderno {
+  background-color: #574134; /* Tu color de fondo */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  
+  /* Flexbox para alinear el texto y el ícono de Bootstrap */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Controla el espacio exacto entre el texto y la flecha */
+  cursor: pointer;
+  
+  /* Transiciones suaves */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Efectos Hover y Focus (importante para sobreescribir estilos por defecto de Bootstrap) */
+.btn-moderno:hover,
+.btn-moderno:focus {
+  background-color: #46342a; /* Tono más oscuro al pasar el cursor */
+  color: #ffffff; /* Asegura que el texto siga blanco */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(87, 65, 52, 0.3);
+}
+
+/* Efecto al hacer clic */
+.btn-moderno:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(87, 65, 52, 0.3);
+}
+
+/* Estilos para el ícono de Bootstrap (bi bi-chevron-down) */
+.btn-moderno .bi {
+  transition: transform 0.3s ease;
+  font-size: 1.1rem; /* Ajusta el tamaño de la flecha si es necesario */
+  line-height: 1;
+}
+
+/* ¡Efecto moderno para el Collapse de Bootstrap!
+   Gira la flecha 180 grados hacia arriba cuando la sección está abierta.
+*/
+.btn-moderno[aria-expanded="true"] .bi {
+  transform: rotate(180deg);
+}
+             /* Contenedor principal de cada tarjeta */
+        .experience-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: rgba(0, 0, 0, 0.15); /* Fondo ligeramente más oscuro */
+            transition: all 0.3s ease;
+          -webkit-box-shadow: -1px 3px 9px 7px rgba(0,0,0,0.41); 
+            box-shadow: -1px 3px 9px 7px rgba(0,0,0,0.41);
+        }
+
+        .experience-card:hover {
+            background-color: rgba(0, 0, 0, 0.25);
+            border-color: var(--text-color);
+        }
+
+        /* Estilos del número a la izquierda */
+        .number-display {
+              font-family: 'zapf', serif;
+            font-weight: 500 !important;
+            font-size: 3rem;
+            line-height: 1;
+            margin-right: 25px;
+        }
+
+        /* Círculo del ícono principal */
+        .icon-circle {
+            width: 75px;
+            height: 75px;
+            min-width: 75px;
+            border: 1px solid var(--text-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-right: 30px;
+        }
+
+        /* Título de la experiencia */
+        .card-title {
+            font-family: 'zapf', serif;
+            font-weight: 500 !important;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            letter-spacing: 0.5px;
+        }
+
+        /* Columnas de los atributos (Costo, Pax, etc) */
+        .attr-col {
+            display: flex;
+            align-items: center;
+            padding: 5px 15px;
+        }
+
+        .detail-icon {
+            font-size: 1.3rem;
+            margin-right: 15px;
+            opacity: 0.9;
+        }
+
+        .detail-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            margin-bottom: 2px;
+            opacity: 0.9;
+        }
+
+        .detail-value {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Líneas punteadas separadoras (solo en pantallas medianas y grandes) */
+        @media (min-width: 992px) {
+            .attr-col:not(:first-child) {
+                border-left: 1px dashed var(--border-color);
+            }
+        }
+
+        /* Ajustes responsivos para móviles */
+        @media (max-width: 767px) {
+            .card-header-mobile {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 15px;
+            }
+            .number-display {
+                margin-right: 15px;
+                font-size: 2.5rem;
+            }
+            .icon-circle {
+                margin-right: 0;
+                width: 60px;
+                height: 60px;
+                min-width: 60px;
+                font-size: 1.8rem;
+            }
+            .card-title {
+                border-bottom: none;
+                padding-bottom: 5px;
+            }
+            .attr-col {
+                padding: 10px 5px;
+            }
+        }

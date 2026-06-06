@@ -1,0 +1,275 @@
+
+    body{
+      margin:0;
+      min-height:100vh;
+      background:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600&auto=format&fit=crop') center center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      font-family:'Montserrat', sans-serif;
+    }
+
+    .main-card{
+      width:100%;
+      max-width:760px;
+      background:#f7f7f7;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
+    }
+
+    /* HEADER */
+
+    .top-bar{
+      padding:18px 26px;
+      border-bottom:1px solid #dddddd;
+    }
+
+    .logo{
+      text-align:center;
+      line-height:1;
+    }
+
+    .logo h1{
+      margin:0;
+      font-size:3rem;
+      font-weight:300;
+      letter-spacing:8px;
+      color:#222;
+    }
+
+    .logo span{
+      font-size:.52rem;
+      letter-spacing:4px;
+      color:#555;
+    }
+
+    .top-icon{
+      text-decoration:none;
+      color:#111;
+      font-size:1rem;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    /* CONTENT */
+
+    .content{
+      padding:28px 54px 60px;
+    }
+
+    .top-pills{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:42px;
+    }
+
+    .info-pill{
+      background:white;
+      border:1px solid #dddddd;
+      border-radius:30px;
+      padding:8px 16px;
+      color:#666;
+      font-size:.9rem;
+      font-weight:500;
+    }
+
+    .title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:4rem;
+      text-align:center;
+      font-weight:600;
+      color:#1d1d1d;
+      margin-bottom:12px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#9b9b9b;
+      font-size:1.1rem;
+      margin-bottom:50px;
+    }
+
+    /* BOX */
+
+    .summary-box{
+      background:#efefef;
+      border-radius:18px;
+      padding:28px;
+      margin-bottom:22px;
+    }
+
+    .summary-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:2rem;
+      font-weight:600;
+      color:#1f1f1f;
+      margin-bottom:22px;
+    }
+
+    .summary-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      margin-bottom:16px;
+      flex-wrap:wrap;
+    }
+
+    .summary-row:last-child{
+      margin-bottom:0;
+    }
+
+    .summary-label{
+      color:#8d8d8d;
+      font-size:1rem;
+      font-weight:500;
+    }
+
+    .summary-value{
+      color:#222;
+      font-size:1rem;
+      font-weight:500;
+      text-align:right;
+    }
+
+    /* BUTTON */
+
+    .reserve-btn{
+      width:100%;
+      height:72px;
+      border:none;
+      border-radius:18px;
+      background:black;
+      color:white;
+      font-size:1.2rem;
+      font-weight:700;
+      margin-top:30px;
+      transition:.25s;
+    }
+
+    .reserve-btn:hover{
+      background:#111;
+      transform:translateY(-2px);
+    }
+
+    /* BOTTOM */
+
+    .bottom{
+      border-top:1px solid #dddddd;
+      padding:18px 24px;
+    }
+
+    .progress-wrapper{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .back-btn{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      border:1px solid #111;
+      background:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:1.1rem;
+    }
+
+    .progress{
+      flex:1;
+      height:7px;
+      background:#dddddd;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .progress-bar{
+      width:86%;
+      background:black;
+    }
+
+    /* FOOTER */
+
+    .footer{
+      background:#ececec;
+      text-align:center;
+      padding:22px;
+      color:#a5a5a5;
+      font-size:.95rem;
+    }
+
+    .footer strong{
+      color:#ff4d73;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .content{
+        padding:30px 22px 50px;
+      }
+
+      .title{
+        font-size:2.5rem;
+      }
+
+      .subtitle{
+        font-size:1rem;
+      }
+
+      .summary-box{
+        padding:22px 18px;
+      }
+
+      .summary-title{
+        font-size:1.8rem;
+      }
+
+      .summary-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+
+      .summary-value{
+        text-align:left;
+      }
+
+      .reserve-btn{
+        height:62px;
+        font-size:1rem;
+      }
+
+      .logo h1{
+        font-size:2rem;
+        letter-spacing:5px;
+      }
+
+      .logo span{
+        font-size:.42rem;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .title{
+        font-size:2rem;
+      }
+
+      .info-pill{
+        font-size:.8rem;
+        padding:7px 12px;
+      }
+
+    }
+

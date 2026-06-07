@@ -138,7 +138,7 @@
     </div>
 
     {{-- BOTTOM --}}
-    <div class="text-center">
+    <div class="text-center mb-4">
 
         <a href="{{route('reservas_comensales')}}" class="btn btn-dark btn-lg">
 

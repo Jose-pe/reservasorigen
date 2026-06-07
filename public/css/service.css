@@ -7,7 +7,7 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      padding:20px;
+      padding:5px;
       font-family:'Montserrat', sans-serif;
     }
 
@@ -23,8 +23,8 @@
     /* HEADER */
 
     .top-bar{
-      padding:18px 24px;
-      border-bottom:1px solid #dddddd;
+     padding: 10px 14px;
+    border-bottom: 1px solid #dddddd;
     }
 
     .logo{
@@ -210,7 +210,7 @@
     @media(max-width:768px){
 
       .content{
-        padding:35px 22px 60px;
+                 padding: 15px 15px 5px;
       }
 
       .title{

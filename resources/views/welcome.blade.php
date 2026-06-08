@@ -33,7 +33,7 @@
       <div class="navbar-nav text-start text-lg-start">
         <a class="nav-link" href="#">Inicio</a>
         <a class="nav-link" href="#galeria">Galería</a>
-        <a class="nav-link" href="#reservas">Reservas</a>
+        <a class="nav-link" href="{{route('reservas_comensales')}}">Reservas</a>
         <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver Menú</a>
         <a class="nav-link" href="#contactanos">Contáctanos</a>    
       </div>   
@@ -57,7 +57,7 @@
   <div class="hero-content text-center">
     <h1 class="hero-title">O    R   I    G   E   N</h1>
     <p class="hero-sub">Alta cocina contemporánea</p>
-    <a href="#" class="btn-reserva-main">RESERVA CON NOSOTROS</a>
+    <a href="{{route('reservas_comensales')}}" class="btn-reserva-main">RESERVA CON NOSOTROS</a>
   </div>
 </section>
 <section class="section text-center mt-5 mb-5">
@@ -245,7 +245,7 @@
 <section class="section text-center mt-5 mb-5" id="reservas">
   <h2 class="text-center mb-2">Reserva tu experiencia</h2>
   <p class="text-center mb-5">Un viaje gastronómico inolvidable</p>
-  <a  href="#" class="btn-reserva ">R E S E R V A R</a>
+  <a  href="{{route('reservas_comensales')}}" class="btn-reserva ">R E S E R V A R</a>
 </section>
 
 <section class="section text-center pt-5">
@@ -261,9 +261,9 @@
     <!-- COLUMNA IZQUIERDA -->
     <div class="col-12 col-md-6 text-center text-md-start">
       <h5 class="fw-bold mb-2">ORIGEN 2026 ©</h5>
-      <p class="mb-2">Contáctanos: <a class="links" target="_blank" href="https://api.whatsapp.com/send?phone=946452405"> +51 946 452 405</a></p>
+      <p class="mb-2">Contáctanos: <a class="links" target="_blank" href="https://api.whatsapp.com/send?phone=51946452405"> +51 946 452 405</a></p>
 
-      <button class="btn-reserva mb-4">
+      <a href="{{route('reservas_comensales')}}" class="btn-reserva mb-4">
         RESERVA CON NOSOTROS
       </button>
     

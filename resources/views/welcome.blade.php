@@ -30,7 +30,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top">
      <a class="navbar navbar-brand ms-3" href="#"> 
-         <img class="img-fluid logo" src="/img-origen/logo-origen-dorado.webp" alt="restaurant origen cusco logo" width="160" height="55" fetchpriority="high">
+         <img class="img-fluid logo" src="/img/logo-catedral_p.png" alt="restaurant origen cusco logo"  fetchpriority="high">
      </a>
 
     <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,8 +64,8 @@
   </div>
 </section>
 
-<section class="section text-center mt-5 mb-5">
-  <div class="container py-5 px-3">
+<section class="section text-center mb-2" id="nosotros">
+  <div class="container-fluid py-5 px-5">
     <h2 class="mb-4 mt-3" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-sine">Nosotros</h2>
     <p class="mx-auto" style="max-width:1800px;" data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-in-sine">
        Origen Cusco invita a reconectarnos con nuestros orígenes a través de una experiencia que honra la tradición cusqueña desde una visión contemporánea.
@@ -74,19 +74,25 @@
   </div>
 </section>
 
-<section class="section container-fluid">
+<section class=" text-center mt-4 mb-5" id="reservas">
+<button type="button" class="btn-reserva mt-4 pe-5 ps-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> VER MENÚ </button>
+ 
+</div>
+ 
+   
+</section>
+
+   
+
+<section class="section container-fluid pt-5">
   <div class="row align-items-center">
     <div class="col-12 col-lg-6" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">
        <div class="p-3 p-md-5">
-          <h2 class="text-start mb-4">Gastronomía</h2>
+          <h2 class="text-start mb-4" id=gastronomia-title>GASTRONOMÍA</h2>
           <p class="text-start">
              En Origen Cusco cada plato ha sido creado como una expression de identidad, donde la gastronomía se convierte en un relato de nuestra cultura. A través de ingredientes locales, técnicas cuidadas y una presentación contemporánea, cada preparación representa una parte de nuestras raíces y tradiciones, reinterpretadas con respeto y creatividad para ofrecer una experiencia auténtica y significativa.
           </p>
-          <div class="text-center">
-              <button type="button" class="button-cartas pt-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                 VER MENÚ
-              </button>
-          </div>
+     
        </div>
     </div>
     <div class="col-md-6 img-container" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-easing="ease-in-sine" id="imgsection">
@@ -116,11 +122,11 @@
 </div>
 
 <section class="section container-fluid">
-  <div class="row align-items-center flex-md-row-reverse">
+  <div class="row align-items-center flex-md-row-reverse" id="propuesta">
     <div class="col-md-6" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-        <div class="p-5">
-            <h2 class="text-end mb-4 pe-4">Propuesta</h2>
-            <p class="text-center">
+        <div class="p-5" id=text_propuesta>
+            <h2 class="text-end mb-4 pe-4">PROPUESTA</h2>
+            <p class="text-start" >
               Origen es una celebración de nuestras raíces, una propuesta gastronómica inspirada en la riqueza cultural, histórica y natural de nuestra tierra. Cada plato nace de la búsqueda constante de los sabores que nos definen, rescatando ingredientes ancestrales, tradiciones culinarias y conocimientos transmitidos de generación en generación.
             </p>
         </div>
@@ -136,7 +142,7 @@
 <section class="section container gallery separate-2" id="galeria">
   <div class="section text-center mt-5 mb-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
-      <h2 class="mb-4 mt-3">Galería</h2> 
+      <h2 class="mb-4 mt-3">NUESTRA GALERÍA</h2> 
     </div>
   </div>
   <div class="p-2 row g-3 gallery">
@@ -209,8 +215,8 @@
 </div>
 </section>
 
-<section class="section text-center mt-5 mb-5" id="reservas">
-  <h2 class="text-center mb-2">Reserva tu experiencia</h2>
+<section class="text-center mt-5 mb-5" id="reservas">
+  <h2 class="text-center mb-2" id="title-2">Reserva tu experiencia</h2>
   <p class="text-center mb-5">Un viaje gastronómico inolvidable</p>
   <a href="{{route('reservas_comensales')}}" class="btn-reserva">R E S E R V A R</a>
 </section>

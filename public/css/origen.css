@@ -31,7 +31,7 @@ img{
 }
 
 .navbar{
-  padding:18px 4px 5px;
+ 
   transition:0.4s;
   background:transparent !important;  
   max-width:100%;
@@ -92,7 +92,7 @@ img{
 
 /* fondo */
 .hero-bg{
-  background:url('/img-origen/hero-origen.jpg') center/cover no-repeat;
+  background:url('/img-origen/hero-origen.webp') center/cover no-repeat !important;
   z-index:1;
 }
 
@@ -210,7 +210,7 @@ img{
 }
 
 #background_experiencias{
-   background: url('/img-origen/textura.png') center/cover repeat;
+   background: url('/img-origen/textura.webp') center/cover repeat;
    color:#D8B36A;   
 }
 

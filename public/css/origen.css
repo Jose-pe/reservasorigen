@@ -479,9 +479,9 @@ h2{
       }
 
       #text_propuesta h2 {
-  padding-right: 0rem !important;
-  width: 100%;
-  text-align: center;
-}
+        padding-right: 0rem !important;
+        width: 100%;
+        text-align: center;
+      }
 
 }

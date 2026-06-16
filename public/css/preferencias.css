@@ -2,7 +2,7 @@
   body{
       margin:0;
       min-height:100vh;
-      background:url('/img-origen/hero-origen.webp') center center/cover no-repeat;
+      background:url('/img/hero-origen.webp') center center/cover no-repeat;
        display:flex;
        justify-content:center;
        align-items:center;     
@@ -13,7 +13,7 @@
     .main-card{
       width:100%;
       max-width:860px;
-      background:#f7f7f7;
+      background:#A3472A;
       border-radius:26px;
       overflow:hidden;
       box-shadow:0 20px 60px rgba(0,0,0,.25);
@@ -47,7 +47,7 @@
 
     .top-icon{
       text-decoration:none;
-      color:#111;
+      color:#D8B36A;
       font-size:1rem;
       display:flex;
       align-items:center;
@@ -84,13 +84,13 @@
       font-size:4rem;
       text-align:center;
       font-weight:600;
-      color:#1d1d1d;
+      color:#D8B36A;
       margin-bottom:12px;
     }
 
     .subtitle{
       text-align:center;
-      color:#9b9b9b;
+      color:#D8B36A;
       font-size:1.15rem;
       margin-bottom:65px;
     }
@@ -105,7 +105,7 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:20px;
+      gap:20px;      
       flex-wrap:wrap;
       margin-bottom:18px;
     }
@@ -113,7 +113,7 @@
     .option-label{
       font-size:1.9rem;
       font-weight:500;
-      color:#222;
+      color: #D8B36A;
     }
 
     /* TOGGLE */
@@ -183,7 +183,7 @@
 
     .kids-label{
       font-size:1.5rem;
-      color:#555;
+      color: #D8B36A;
     }
 
     .counter{

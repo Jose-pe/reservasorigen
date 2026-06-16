@@ -17,7 +17,7 @@
     .main-card{
       width:100%;
       max-width:720px;
-      background:#f6f6f6;
+      background:#A3472A;
       border-radius:24px;
       overflow:hidden;
       box-shadow:0 20px 60px rgba(0,0,0,.25);
@@ -51,7 +51,7 @@
 
     .top-icon{
       text-decoration:none;
-      color:#111;
+      color:#D8B36A;
       font-size:1rem;
       display:flex;
       align-items:center;
@@ -69,13 +69,13 @@
       font-size:4rem;
       font-weight:600;
       text-align:center;
-      color:#111;
+      color:#D8B36A;
       margin-bottom:10px;
     }
 
     .subtitle{
       text-align:center;
-      color:#8b8b8b;
+      color:#D8B36A;
       font-size:1.1rem;
       margin-bottom: 15px;
     }
@@ -90,7 +90,7 @@
     }
 
     .guest-card{
-      background:white;
+      background:white;      
       border:1px solid #d8d8d8;
       border-radius:18px;
       height:120px;
@@ -103,8 +103,8 @@
     }
 
     .guest-card.active{
-      background:black;
-      color:white;
+      background:#0f0e0e;
+      color: #D8B36A;
       border-color:black;
       box-shadow:0 10px 20px rgba(0,0,0,.15);
     }
@@ -349,12 +349,12 @@
 }
 
 .date-card.active{
-  border:2px solid #1db954;
-  box-shadow:0 10px 20px rgba(0,0,0,.08);
+  border:8px solid #3b352f;
+  box-shadow:0 10px 30px rgba(66, 50, 50, 0.973);
 }
 
 .date-card span{
-  color:#666;
+  color:#000000;
   font-size:1rem;
 }
 
@@ -390,7 +390,7 @@
   border:none;
   background:transparent;
   font-size:1.2rem;
-  color:#555;
+  color:#D8B36A;
   display:inline-flex;
   align-items:center;
   gap:12px;
@@ -398,7 +398,7 @@
 }
 
 .calendar-btn:hover{
-  color:black;
+  color:#ebc57b;
 }
 
 /*CALENDARIO*/
@@ -410,17 +410,17 @@
 }
 
 #calendarBody td:hover {
-  background-color: #f8f9fa;
+  background-color: #b34b2b;
 }
 
 #calendarBody td.selected {
-  background-color: #0d6efd !important;
+  background-color: #b6561e !important;
   color: white;
   font-weight: bold;
 }
 
 #calendarBody td.today {
-  border: 2px solid #0d6efd;
+  border: 2px solid #b34b2b;
 }
 
 /* ========================= */

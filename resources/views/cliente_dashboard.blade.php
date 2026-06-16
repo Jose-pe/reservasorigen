@@ -148,13 +148,15 @@
         </a>
 
     </div>
-
-    {{-- FOOTER --}}
-    <div class="footer">
-        desarrollado por <strong>Jose Luis Corazao</strong>
+ <div class="footer" style=" background:black !important; ">
+      Powered by <strong  style="color: #15D7B5 !important;"> MOD STUDIO</strong>
     </div>
+    
 
 </div>
+
+{{-- FOOTER --}}
+   
 
 
 {{--js--}}

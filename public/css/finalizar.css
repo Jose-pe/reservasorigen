@@ -2,8 +2,7 @@
     body{
       margin:0;
       min-height:100vh;
-      background:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600&auto=format&fit=crop') center center/cover no-repeat;
-      display:flex;
+      background:url('/img/hero-origen.webp') center center/cover no-repeat;      display:flex;
       justify-content:center;
       align-items:center;
       padding:5px;
@@ -13,7 +12,7 @@
     .main-card{
       width:100%;
       max-width:760px;
-      background:#f7f7f7;
+      background:#A3472A;
       border-radius:26px;
       overflow:hidden;
       box-shadow:0 20px 60px rgba(0,0,0,.25);
@@ -47,7 +46,7 @@
 
     .top-icon{
       text-decoration:none;
-      color:#111;
+      color:#D8B36A;
       font-size:1rem;
       display:flex;
       align-items:center;
@@ -66,8 +65,8 @@
       width:92px;
       height:92px;
       border-radius:50%;
-      border:5px solid #29c259;
-      color:#29c259;
+      border:5px solid #ffffff;
+      color:#fafafa;
       font-size:3rem;
       display:flex;
       justify-content:center;
@@ -79,14 +78,14 @@
       font-family:'Cormorant Garamond', serif;
       font-size:3.8rem;
       font-weight:600;
-      color:#1f1f1f;
+      color:#D8B36A;
       text-align:center;
       margin-bottom:12px;
     }
 
     .subtitle{
       text-align:center;
-      color:#9a9a9a;
+      color:#D8B36A;
       font-size:1.05rem;
       margin-bottom:38px;
     }

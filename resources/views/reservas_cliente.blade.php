@@ -88,20 +88,16 @@
           </a>
 
         </div>
-
+<!-- FOOTER -->
+    
       </div>
-
+     
    
      
 
     </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-
-      Powered by <strong>Jose Luis Corazao</strong>
-
-    </div>
+  
+    
 
   </div>
 

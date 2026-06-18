@@ -47,9 +47,9 @@ return new class extends Migration
 
             $table->string('label')->nullable()->default('Reserva web');
 
-           // $table->string('observation')->nullable()->default('Sin observaciones');
+            $table->string('observation')->nullable()->default('Sin observaciones');
             
-           // $table->string('id_admin')->nullable();
+           $table->string('id_admin')->nullable();
 
             $table->string('state')->default('Pendiente');
             

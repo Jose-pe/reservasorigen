@@ -611,7 +611,7 @@
                             <option value="Confirmado">Confirmado</option>                        
                             </select>
           </div>
-          <lAbel class="ps-2">Observaciones</lAbel>
+          <label class="ps-2">Observaciones</label>
           <div class="mb-2"><textarea class="form-control" type="text" id="observation" name="observation" rows="2" placeholder="La reserva tiene observaciones ?">  </textarea> </div>
 
       <div class="modal-footer">

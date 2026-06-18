@@ -588,7 +588,6 @@
         <div class="mb-2"><input  class="form-control" id="food_description" name="food_description" placeholder="Restricciones alimentarias"></div>
         <div class="mb-2"><input type="number" min="0" max="100" class="form-control" id="kids_count" name="kids_count" placeholder="Niños menores de 12 años"></div>
         <div class="mb-2"><input class="form-control" type="text" id="special_time" name="special_time" placeholder="Ocación especial ?"></div>
-        <div class="mb-2"><input class="form-control" type="text-area"  id="observations" name="observations" placeholder="Ocación especial ?"></div>
         <div class="mb-2"><select class="form-select"  id="label" name="label" required>
                             <option value="" selected disabled>Seleccione la etiqueta</option>
                             <option value="FITS">FITS</option>

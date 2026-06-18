@@ -155,7 +155,9 @@
 
       </div>
          
-
+      <div class="col-12">
+          <p class="text-disclaimer"> <i class="bi bi-exclamation-square-fill"></i> Nuestro restaurante puede mantener su reserva hasta 15 minutos. Si usted no llega dentro de ese intervalo de tolerancia de 15 minutos a partir de la hora original de su reserva, el restaurante se reserva el derecho a cancelar la misma y liberar la mesa.</p>
+         </div>
     
     
 

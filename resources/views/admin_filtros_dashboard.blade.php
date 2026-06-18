@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Panel Administrador - Reservas - Filtros</title>
-  <link rel="icon" type="image/png" href="favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
@@ -17,6 +16,12 @@
     .card { border-radius: 15px; }
     .section { display:none; }
     .section.active { display:block; }
+     td{
+      text-align: center !important;
+    }
+     th{
+      text-align: center !important;
+    }
   </style>
 </head>
 <body>
@@ -136,8 +141,11 @@
                 <th>Servicio</th>
                 <th>Restricciones</th>
                 <th>Niños</th>
+                <th>Ocación</th>
+                <th>Estado de Pago</th>
                 <th>Etiqueta</th>
-                <th>Estado</th>                
+                <th>Estado</th>   
+                <th>Observasiones</th>             
                 <th>Acciones</th>
               </tr>
             </thead>
@@ -154,6 +162,16 @@
                 <td>{{$reserva->service}}</td>
                 <td>{{$reserva->food_description}}</td>
                 <td class="text-center" >{{$reserva->kids_count}}</td>
+                <td class="text-center" >{{$reserva->special_time}}</td>
+                 @if ($reserva->pay_state === 'IMPAGO')
+                <td class="text-center" ><a class="badge bg-danger text-white  p-2">{{$reserva->pay_state}}</a></td>
+                @endif
+                @if ($reserva->pay_state === 'PAGO')
+                <td class="text-center" ><a class="badge  bg-success p-2">{{$reserva->pay_state}}</a></td>
+                @endif
+                 @if ($reserva->pay_state === 'NO APLICA')
+                <td class="text-center" ><a class="badge text-dark bg-warning p-2">{{$reserva->pay_state}}</a></td>
+                @endif
                 <td> {{$reserva->label}}</td>
                 @if ($reserva->state === 'Pendiente')
                 <td ><a class="badge bg-warning  text-dark  p-2">{{$reserva->state}}</a></td>
@@ -168,6 +186,7 @@
                 <td ><a class="badge bg-primary p-2">{{$reserva->state}}</a></td>
                 @endif
                
+                    <td>{{$reserva->observation}}</td>
                 
                 <td>  
                     <form action="{{ route('admin_edit_reserva', ['id' => $reserva->id]) }}" method="GET" style="display:inline-block;">

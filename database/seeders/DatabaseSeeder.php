@@ -18,11 +18,25 @@ class DatabaseSeeder extends Seeder
     {
         
 
-        User::create([
+      /*  User::create([
             'name' => 'Admin_Reservas',
             'email' => 'admin@origen.com',
             'role' => 'admin',
             'password' => Hash::make('pass-origen-01'),
+        ]);
+*/
+        User::create([
+            'name' => 'Reservas_General',
+            'email' => 'reservas@campanayoc.com',
+            'role' => 'admin',
+            'password' => Hash::make('reservas-campanayoc-081'),
+        ]);
+
+         User::create([
+            'name' => 'Comercial_General',
+            'email' => 'comercial@campanayoc.com',
+            'role' => 'admin',
+            'password' => Hash::make('comercial-campanayoc-079'),
         ]);
 
 

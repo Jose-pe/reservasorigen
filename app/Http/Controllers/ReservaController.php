@@ -168,6 +168,7 @@ class ReservaController extends Controller
         $reserva = Reserva::find($id);
         $reserva->state = "Confirmado";
         $reserva->label = $request->label; // Asegúrate de que el campo 'label' esté presente en tu formulario
+        $reserva->pay_state = $request->pay_state;
         $reserva->save();
         return redirect()->back()->with('status', 'Estado de la reserva actualizado');
     }

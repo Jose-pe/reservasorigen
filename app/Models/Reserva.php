@@ -19,8 +19,12 @@ class Reserva extends Model
         'food_description',
         'kids_under_12',
         'kids_count',
+        'special_time',
         'label',
-        'state'
+        'pay_state',
+        'state',
+        'observation',
+        'id_admin'
 
     ];
 }

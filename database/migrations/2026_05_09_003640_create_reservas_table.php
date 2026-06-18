@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->id(); 
+
             $table->string('name');
 
-            $table->string('email');
+            $table->string('email')->nullable();
 
             $table->string('phone')->nullable();
 
@@ -36,12 +37,22 @@ return new class extends Migration
             $table->boolean('kids_under_12')
                   ->default(false);
 
-            $table->integer('kids_count')
+             $table->integer('kids_count')->nullable()
                   ->default(0);
+            
+            $table->string('pay_state')->nullable()
+                  ->default('NO APLICA');
+
+            $table->string('special_time')->nullable()->default('Ninguno');
 
             $table->string('label')->nullable()->default('Reserva web');
 
+           // $table->string('observation')->nullable()->default('Sin observaciones');
+            
+           // $table->string('id_admin')->nullable();
+
             $table->string('state')->default('Pendiente');
+            
             $table->timestamps();
             
         });

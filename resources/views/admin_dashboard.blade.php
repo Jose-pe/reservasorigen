@@ -8,7 +8,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-  <link rel="icon" type="image/png" href="favicon.ico">
  <style>
     body { background-color: #f5f6fa; }
     .sidebar { height: 20vh; background: #1e1e2f; color: white; }
@@ -17,6 +16,12 @@
     .card { border-radius: 15px; }
     .section { display:none; }
     .section.active { display:block; }
+    td{
+      text-align: center !important;
+    }
+     th{
+      text-align: center !important;
+    }
   </style>
 </head>
 <body>
@@ -99,9 +104,13 @@
                 <th>Servicio</th>
                 <th>Restricciones</th>
                 <th>Niños</th>
+                <th>Ocasión</th>
+                <th>Estado de Pago</th>
                 <th>Etiqueta</th>
-                <th>Estado</th>                
+                <th>Estado de Reserva</th>  
+                <th>Observaciones</th>              
                 <th>Acciones</th>
+
               </tr>
             </thead>
             <tbody>
@@ -117,6 +126,17 @@
                 <td>{{$reserva->service}}</td>
                 <td>{{$reserva->food_description}}</td>
                 <td class="text-center" >{{$reserva->kids_count}}</td>
+                <td class="text-center" >{{$reserva->special_time}}</td>
+                 @if ($reserva->pay_state === 'IMPAGO')
+                <td class="text-center" ><a class="badge bg-danger text-white  p-2">{{$reserva->pay_state}}</a></td>
+                @endif
+                @if ($reserva->pay_state === 'PAGO')
+                <td class="text-center" ><a class="badge  bg-success p-2">{{$reserva->pay_state}}</a></td>
+                @endif
+                 @if ($reserva->pay_state === 'NO APLICA')
+                <td class="text-center" ><a class="badge text-dark bg-warning p-2">{{$reserva->pay_state}}</a></td>
+                @endif
+                
                 <td> {{$reserva->label}}</td>
                 @if ($reserva->state === 'Pendiente')
                 <td ><a class="badge bg-warning  text-dark  p-2">{{$reserva->state}}</a></td>
@@ -128,7 +148,7 @@
                 <td ><a class="badge bg-danger p-2">{{$reserva->state}}</a></td>
                 @endif
                
-                
+                <td>{{$reserva->observation}}</td>
                 <td>  
                   <form action="{{ route('admin_atendido_state', ['id' => $reserva->id]) }}" method="post" style="display:inline-block;">
                     @csrf
@@ -136,6 +156,11 @@
                    <button type="submit" class="btn btn-sm btn-success"><i class="fa-solid fa-user-check" style="color: rgb(255, 255, 255);"></i></button>
 
                 </form> 
+                 <form action="{{ route('admin_edit_reserva', ['id' => $reserva->id]) }}" method="get" style="display:inline-block;">     
+                    @csrf
+                    @method('GET')           
+                    <button type="submit" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
+                  </form>
                   <form action="{{ route('admin_delete_reserva', ['id' => $reserva->id]) }}" method="post" style="display:inline-block;">
                     @csrf
                     @method('POST')
@@ -170,8 +195,11 @@
                 <th>Servicio</th>
                 <th>Restricciones</th>
                 <th>Niños</th>
+                <th>Ocación</th>
+                <th>Estado de Pago</th>
                 <th>Etiqueta</th>
-                <th>Estado</th>                
+                <th>Estado de Reserva</th>  
+                <th>Observaciones</th>              
                 <th>Acciones</th>
               </tr>
             </thead>
@@ -188,6 +216,16 @@
                 <td>{{$reserva_siguiente->service}}</td>
                 <td>{{$reserva_siguiente->food_description}}</td>
                 <td class="text-center" >{{$reserva_siguiente->kids_count}}</td>
+                <td class="text-center" >{{$reserva_siguiente->special_time}}</td>
+                @if ($reserva_siguiente->pay_state === 'IMPAGO')
+                <td class="text-center" ><a class="badge bg-danger text-white  p-2">{{$reserva_siguiente->pay_state}}</a></td>
+                @endif
+                @if ($reserva_siguiente->pay_state === 'PAGO')
+                <td class="text-center" ><a class="badge  bg-success p-2">{{$reserva_siguiente->pay_state}}</a></td>
+                @endif
+                 @if ($reserva_siguiente->pay_state === 'NO APLICA')
+                <td class="text-center" ><a class="badge text-dark bg-warning p-2">{{$reserva_siguiente->pay_state}}</a></td>
+                @endif
                 <td> {{$reserva_siguiente->label}}</td>
                 @if ($reserva_siguiente->state === 'Pendiente')
                 <td ><a class="badge bg-warning  text-dark  p-2">{{$reserva_siguiente->state}}</a></td>
@@ -198,6 +236,8 @@
                 @if ($reserva_siguiente->state === 'Cancelado')
                 <td ><a class="badge bg-danger p-2">{{$reserva_siguiente->state}}</a></td>
                 @endif  
+
+                <td>{{$reserva_siguiente->observation}}</td>
                   <td>           
                  
                     <form action="{{ route('admin_edit_reserva', ['id' => $reserva_siguiente->id]) }}" method="get" style="display:inline-block;">     
@@ -238,8 +278,11 @@
                 <th>Servicio</th>
                 <th>Restricciones</th>
                 <th>Niños</th>
+                <th>Ocasión</th>
+                <th>Estado de Pago</th>
                 <th>Etiqueta</th>
-                <th>Estado</th>                
+                <th>Estado de Reserva</th>  
+                <th>Observaciones</th>              
                
               </tr>
             </thead>
@@ -256,6 +299,17 @@
                 <td>{{$reserva_state->service}}</td>
                 <td>{{$reserva_state->food_description}}</td>
                 <td class="text-center" >{{$reserva_state->kids_count}}</td>
+                <td class="text-center" >{{$reserva_state->special_time}}</td>
+               
+                 @if ($reserva_state->pay_state === 'IMPAGO')
+                <td class="text-center" ><a class="badge bg-danger text-white  p-2">{{$reserva_state->pay_state}}</a></td>
+                @endif
+                @if ($reserva_state->pay_state === 'PAGO')
+                <td class="text-center" ><a class="badge  bg-success p-2">{{$reserva_state->pay_state}}</a></td>
+                @endif
+                 @if ($reserva_state->pay_state === 'NO APLICA')
+                <td class="text-center" ><a class="badge  bg-warning text-dark p-2">{{$reserva_state->pay_state}}</a></td>
+                @endif
                 <td> {{$reserva_state->label}}</td>
                 @if ($reserva_state->state === 'Pendiente')
                 <td ><a class="badge bg-warning  text-dark  p-2">{{$reserva_state->state}}</a></td>
@@ -269,6 +323,8 @@
                 @if ($reserva_state->state === 'Atendido')
                 <td ><a class="badge bg-primary p-2">{{$reserva_state->state}}</a></td>
                 @endif 
+
+                <td>{{$reserva_state->observation}}</td>
                  {{-- <td >  
                    <form action="{{ route('admin_edit_reserva', ['id' => $reserva_state->id]) }}" method="get" style="display:inline-block;">     
                     @csrf
@@ -309,8 +365,11 @@
                 <th>Servicio</th>
                 <th>Restricciones</th>
                 <th>Niños</th>
+                <th>Ocasión</th>
+                <th>Estado de Pago</th>
                 <th>Etiqueta</th>
-                <th>Estado</th>                
+                <th>Estado de Reserva</th>   
+                <th>Observaciones</th>             
                 <th>Acciones</th>
               </tr>
             </thead>
@@ -325,12 +384,21 @@
                 <td>{{$reserva_pendiente->reservation_date}}</td>
                 <td>{{$reserva_pendiente->reservation_time}}</td>
                 <td>{{$reserva_pendiente->service}}</td>
-                <td>{{$reserva_pendiente->food_description}}</td>
+                <td>{{$reserva_pendiente->food_description}}</td>               
                 <td class="text-center" >{{$reserva_pendiente->kids_count}}</td>
+                <td>{{$reserva_pendiente->special_time}}</td>               
                   <form action="{{ route('admin_update_state', ['id' => $reserva_pendiente->id]) }}" method="post">
                  
                     @csrf
                     @method('POST')
+                     <td> <select class="form-select" id="pay_state" name="pay_state" required>
+                     <option value="{{ $reserva_pendiente->pay_state }}" {{ old('pay_state', $reserva_pendiente->pay_state) == $reserva_pendiente->pay_state ? 'selected' : '' }}>
+                                        {{ $reserva_pendiente->pay_state }}
+                                    </option>                  
+                  <option value="PAGO">PAGO</option>
+                  <option value="IMPAGO">IMPAGO</option>
+                           
+                </select></td>
                   <td> <select class="form-select" id="label" name="label" required>
                      <option value="{{ $reserva_pendiente->label }}" {{ old('label', $reserva_pendiente->label) == $reserva_pendiente->label ? 'selected' : '' }}>
                                         {{ $reserva_pendiente->label }}
@@ -341,6 +409,8 @@
                   <option value="Grupo de agencias">Grupo de agencias</option>
                   <option value="Grupo de guias">Grupo de guias</option>
                   <option value="Invitación">Invitación</option>
+                  <option value="Menú Turístico">Menú Turístico</option>                               
+
                 </select></td>
                 @if ($reserva_pendiente->state === 'Pendiente')
                 <td ><a class="badge bg-warning  text-dark  p-2">{{$reserva_pendiente->state}}</a></td>
@@ -351,6 +421,7 @@
                 @if ($reserva_pendiente->state === 'Cancelado')
                 <td ><a class="badge bg-danger p-2">{{$reserva_pendiente->state}}</a></td>
                 @endif
+                <td>{{$reserva_pendiente->observation}}</td>
                  <td>                   
                     <button type="submit" class="btn btn-sm btn-success"><i class="bi bi-check-square"></i></button>
                   </form>            
@@ -398,8 +469,11 @@
                 <th>Servicio</th>
                 <th>Restricciones</th>
                 <th>Niños</th>
+                <th>Ocación</th>
+                <th>Estado de Pago</th>
                 <th>Etiqueta</th>
-                <th>Estado</th>                
+                <th>Estado de Reserva</th> 
+                <th>Observaciones</th>               
                 <th>Acciones</th>
               </tr>
             </thead>
@@ -410,12 +484,23 @@
                 <td>{{$reserva_hoy->name}}</td>
                 <td>{{$reserva_hoy->email}}</td>
                 <td>{{$reserva_hoy->phone}}</td>
-                <td class="text-center">{{$reserva_hoy->guests}}</td>
+                <td>{{$reserva_hoy->guests}}</td>
                 <td>{{$reserva_hoy->reservation_date}}</td>
                 <td>{{$reserva_hoy->reservation_time}}</td>
                 <td>{{$reserva_hoy->service}}</td>
                 <td>{{$reserva_hoy->food_description}}</td>
                 <td class="text-center" >{{$reserva_hoy->kids_count}}</td>
+                <td class="text-center" >{{$reserva_hoy->special_time}}</td>
+                 @if ($reserva_hoy->pay_state === 'IMPAGO')
+                <td class="text-center" ><a class="badge bg-danger text-white  p-2">{{$reserva_hoy->pay_state}}</a></td>
+                @endif
+                @if ($reserva_hoy->pay_state === 'PAGO')
+                <td class="text-center" ><a class="badge  bg-success p-2">{{$reserva_hoy->pay_state}}</a></td>
+                @endif
+                 @if ($reserva_hoy->pay_state === 'NO APLICA')
+                <td class="text-center" ><a class="badge  bg-warning text-dark p-2">{{$reserva_hoy->pay_state}}</a></td>
+                @endif
+               
                 <td>{{$reserva_hoy->label}}</td>
 
                  
@@ -431,7 +516,7 @@
                 @if ($reserva_hoy->state === 'Atendido')
                 <td ><a class="badge bg-primary p-2">{{$reserva_hoy->state}}</a></td>
                 @endif  
-
+                  <td>{{$reserva_hoy->observation}}</td>
                  <td>
                   <form action="{{ route('admin_edit_reserva', ['id' => $reserva_hoy->id]) }}" method="get" style="display:inline-block;">     
                     @csrf
@@ -489,8 +574,8 @@
           @method('post')
         <input type="hidden" id="editIndex">
         <div class="mb-2"><input class="form-control" id="name" name="name" placeholder="Cliente" required></div>
-        <div class="mb-2"><input class="form-control" id="email" name="email" placeholder="E-mail" required></div>
-        <div class="mb-2"><input class="form-control" id="phone" name="phone" placeholder="Telefono" required></div>
+        <div class="mb-2"><input class="form-control" id="email" name="email" placeholder="E-mail"></div>
+        <div class="mb-2"><input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefono"></div>
         <div class="mb-2"><input type="number" min="1" max="100" class="form-control" id="guests" name="guests" placeholder="Personas" required></div>
         <div class="mb-2"><input type="date" class="form-control" id="reservation_date" name="reservation_date" required></div>
         <div class="mb-2"><input type="time" min="11:00" max="22:30" class="form-control" id="reservation_time" name="reservation_time" required></div>
@@ -500,24 +585,36 @@
                           <option value="Cena">Cena</option>                          
                           </select>
         </div>
-        <div class="mb-2"><input  class="form-control" id="food_description" name="food_description" placeholder="Restricciones alimentarias" required></div>
-        <div class="mb-2"><input type="number" min="0" max="100" class="form-control" id="kids_count" name="kids_count" placeholder="Niños menores de 12 años" required></div>
-        
+        <div class="mb-2"><input  class="form-control" id="food_description" name="food_description" placeholder="Restricciones alimentarias"></div>
+        <div class="mb-2"><input type="number" min="0" max="100" class="form-control" id="kids_count" name="kids_count" placeholder="Niños menores de 12 años"></div>
+        <div class="mb-2"><input class="form-control" type="text" id="special_time" name="special_time" placeholder="Ocación especial ?"></div>
+        <div class="mb-2"><input class="form-control" type="text-area"  id="observations" name="observations" placeholder="Ocación especial ?"></div>
         <div class="mb-2"><select class="form-select"  id="label" name="label" required>
                             <option value="" selected disabled>Seleccione la etiqueta</option>
                             <option value="FITS">FITS</option>
                             <option value="Grupo de agencias">Grupo de agencias</option>
                             <option value="Grupo de guias">Grupo de guias</option>
                             <option value="Invitación">Invitación</option>        
-                            <option value="Servicio Regular">Servicio Regular</option>                
+                            <option value="Servicio Regular">Servicio Regular</option> 
+                            <option value="Menú Turístico">Menú Turístico</option>                                    
+                            </select>
+          </div>
+            <div class="mb-2"><select class="form-select"  id="pay_state" name="pay_state">
+                           <option value="" selected disabled>Seleccione estado de pago</option>
+                            <option value="PAGO">PAGO</option>
+                            <option value="IMPAGO">IMPAGO</option>
+                            <option value="NO APLICA">NO APLICA</option>                           
                             </select>
           </div>
           <div class="mb-2"><select class="form-select"  id="state" name="state" required>
-                           <option value="" selected disabled>Seleccione el estado</option>
+                           <option value="" selected disabled>Seleccione el estado de la reserva</option>
                             <option value="Pendiente">Pendiente</option>
                             <option value="Confirmado">Confirmado</option>                        
                             </select>
           </div>
+          <lAbel class="ps-2">Observaciones</lAbel>
+          <div class="mb-2"><textarea class="form-control" type="text" id="observation" name="observation" rows="2" placeholder="La reserva tiene observaciones ?">  </textarea> </div>
+
       <div class="modal-footer">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button class="btn btn-dark" type="submit">Guardar</button>

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Panel Administrador - Editar Reservas </title>
-  <link rel="icon" type="image/png" href="favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
@@ -62,14 +61,14 @@
                         {{-- E-mail --}}
                         <div class="mb-3">
                             <label for="email" class="form-label text-muted fw-semibold mb-1">E-mail</label>
-                            <input type="email" class="form-control form-control-modern @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $reserva->email) }}" required>
+                            <input type="email" class="form-control form-control-modern @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $reserva->email) }}">
                             @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 
                         {{-- Teléfono --}}
                         <div class="mb-3">
                             <label for="telefono" class="form-label text-muted fw-semibold mb-1">Teléfono</label>
-                            <input type="tel" class="form-control form-control-modern @error('telefono') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone', $reserva->phone) }}" required>
+                            <input type="tel" class="form-control form-control-modern @error('telefono') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone', $reserva->phone) }}">
                             @error('phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 
@@ -125,6 +124,26 @@
                             <input type="number" class="form-control form-control-modern @error('kids_count') is-invalid @enderror" id="kids_count" name="kids_count" value="{{ old('kids_count', $reserva->kids_count) }}" min="0">
                             @error('kids_count') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
+                        {{-- Ocacion Especial --}}
+                        <div class="mb-3">
+                            <label for="special_time" class="form-label text-muted fw-semibold mb-1">Ocasión especial</label>
+                            <input type="text" class="form-control form-control-modern @error('special_time') is-invalid @enderror" id="special_time" name="special_time" value="{{ old('special_time', $reserva->special_time) }}">
+                            @error('special_time') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                        </div>
+
+                         {{-- Estado de pago --}}    
+                        <div class="mb-3">
+                            <label for="pay_state" class="form-label text-muted fw-semibold mb-1">Seleccione el estado del pago</label>
+                            <select class="form-select form-select-modern @error('label') is-invalid @enderror" id="pay_state" name="pay_state">
+                                                               
+                                    <option value="{{ $reserva->pay_state }}" {{ old('pay_state', $reserva->pay_state) == $reserva->pay_state ? 'selected' : '' }}>
+                                        {{ $reserva->pay_state }}
+                                    </option>
+                                    <option value="PAGO">PAGO</option>
+                                    <option value="IMPAGO">IMPAGO</option>                                       
+                            </select>
+                            @error('pay_state') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                        </div>
 
                         {{-- Etiqueta --}}
                         <div class="mb-3">
@@ -139,14 +158,15 @@
                                     <option value="Grupo de guias">Grupo de guias</option>
                                     <option value="Invitación">Invitación</option>        
                                     <option value="Servicio Regular">Servicio Regular</option>     
-                                
+                                    <option value="Menú Turístico">Menú Turístico</option>                                    
+ 
                             </select>
                             @error('label') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 
                         {{-- Estado --}}
                         <div class="mb-4">
-                            <label for="state" class="form-label text-muted fw-semibold mb-1">Seleccione el estado</label>
+                            <label for="state" class="form-label text-muted fw-semibold mb-1">Seleccione el estado de la reserva</label>
                             <select class="form-select form-select-modern @error('state') is-invalid @enderror" id="state" name="state" required>
                               
                                     <option value="{{ $reserva->state }}" {{ old('state', $reserva->state) == $reserva->state ? 'selected' : '' }}>
@@ -157,6 +177,13 @@
                                
                             </select>
                             @error('state') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                        </div>
+
+                         {{-- Obsercaciones --}}
+                        <div class="mb-3">
+                            <label for="observation" class="form-label text-muted fw-semibold mb-1">Observaciones</label>
+                            <textarea type="text"  class="form-control form-control-modern @error('observation') is-invalid @enderror" id="observation" name="observation" value="{{ old('observation', $reserva->observation) }}"> {{$reserva->observation}} </textarea>
+                            @error('observation') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 
                         {{-- Botones de acción --}}

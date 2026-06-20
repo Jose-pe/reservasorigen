@@ -46,6 +46,8 @@ Route::get('/admin_filtrar_email', [App\Http\Controllers\ReservaController::clas
 Route::get('/admin_filtrar_fecha', [App\Http\Controllers\ReservaController::class, 'admin_filtrar_fecha'])->middleware('auth','admin')->name('admin_filtrar_fecha');
 Route::get('/admin_filtrar_etiqueta', [App\Http\Controllers\ReservaController::class, 'admin_filtrar_etiqueta'])->middleware('auth','admin')->name('admin_filtrar_etiqueta');
 
+Route::get('/reservas_reporte', [App\Http\Controllers\ReservaController::class, 'reporte_reservas_tomorrow'])->middleware('auth','admin')->name('reservas_reporte');
+
 
 Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

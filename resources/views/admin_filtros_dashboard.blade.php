@@ -118,7 +118,8 @@
                             <option value="Grupo de guias">Grupo de guias</option>
                             <option value="Invitación">Invitación</option>        
                             <option value="Servicio Regular">Servicio Regular</option>  
-                            <option value="Reserva web">Reserva Web</option>              
+                            <option value="Reserva web">Reserva Web</option> 
+                            <option value="Menú Turístico">Menú Turístico</option>             
                             </select>
             <button class="btn btn-primary" type="submit">Buscar</button>
             </div>
@@ -144,7 +145,7 @@
                 <th>Ocación</th>
                 <th>Estado de Pago</th>
                 <th>Etiqueta</th>
-                <th>Estado</th>   
+                <th>Estado de reserva</th>   
                 <th>Observasiones</th>             
                 <th>Acciones</th>
               </tr>

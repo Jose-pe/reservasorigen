@@ -17,8 +17,7 @@ class ReservasTomorrow implements FromQuery, WithHeadings, WithMapping, ShouldAu
     */
      public function query()
     {
-         return Reserva::whereDate('reservation_date', Carbon::tomorrow()->toDateString())            
-            ->orderBy('reservation_time', 'asc'); 
+         return Reserva::whereDate('reservation_date', Carbon::tomorrow()->toDateString())->where('state', '!=', 'Cancelado')->orderBy('reservation_time', 'asc'); 
     }
 
     public function headings(): array

@@ -143,7 +143,7 @@ class ReservaController extends Controller
                 ->take(30)
                 ->get();
             
-            $reservas_pendientes = Reserva::where('state', 'Pendiente')->orderBy('reservation_date', 'asc')->orderBy('reservation_time', 'asc')->get();
+            $reservas_pendientes = Reserva::whereDate('reservation_date','>=' ,now()->toDateString())->where('state', 'Pendiente')->orderBy('reservation_date', 'asc')->orderBy('reservation_time', 'asc')->get();
           //todas las  reservas ordenadas por fecha y hora    
             $reservas_states = Reserva::whereIn('state', ['Atendido', 'Cancelado'])->orderBy('reservation_date', 'asc')->orderBy('reservation_time', 'asc')->get();
             

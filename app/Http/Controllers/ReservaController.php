@@ -88,6 +88,7 @@ class ReservaController extends Controller
          $input = $request->all();
          $input['name'] = Auth::user()->name;
          $input['email'] = Auth::user()->email; 
+         $input['id_admin'] = 'Usuario Web'; 
          $input['role'] = 'cliente';   
          
         $existe = Reserva::where([
@@ -140,7 +141,7 @@ class ReservaController extends Controller
             $reservas_siguientes = Reserva::whereDate('reservation_date','>' ,now()->toDateString())->where('state', '!=', 'Cancelado')
                 ->orderBy('reservation_date', 'asc')
                 ->orderBy('reservation_time', 'asc')                
-                ->take(30)
+                ->take(20)
                 ->get();
             
             $reservas_pendientes = Reserva::whereDate('reservation_date','>=' ,now()->toDateString())->where('state', 'Pendiente')->orderBy('reservation_date', 'asc')->orderBy('reservation_time', 'asc')->get();
@@ -158,6 +159,7 @@ class ReservaController extends Controller
     {   
         $input = $request->all();
         $input['role'] = 'cliente'; 
+        $input['id_admin'] = Auth::user()->email;
         $reservation = Reserva::create($input);
         return redirect()->route('admin_dashboard')->with('status', 'Reserva creada exitosamente'); 
        
@@ -170,6 +172,7 @@ class ReservaController extends Controller
             }
         $reserva = Reserva::find($id);
         $reserva->state = "Confirmado";
+        $input['id_admin'] = Auth::user()->email;
         $reserva->label = $request->label; // Asegúrate de que el campo 'label' esté presente en tu formulario
         $reserva->pay_state = $request->pay_state;
         $reserva->save();
@@ -182,7 +185,8 @@ class ReservaController extends Controller
                 return view('welcome');
             }
         $reserva = Reserva::find($id);
-        $reserva->state = "Atendido";        
+        $reserva->state = "Atendido"; 
+        $input['id_admin'] = Auth::user()->email;         
         $reserva->save();
         return redirect()->back()->with('status', 'Estado de la reserva actualizado');
     }
@@ -193,6 +197,7 @@ class ReservaController extends Controller
                 return view('welcome');
             }
         $reserva = Reserva::find($id);
+        $input['id_admin'] = Auth::user()->email;
         $reserva->state = "Cancelado";        
         $reserva->save();
         return redirect()->back()->with('status', 'Estado de la reserva actualizado');
@@ -238,6 +243,16 @@ class ReservaController extends Controller
         return view('admin_filtros_dashboard', compact('reservas'));
     }
 
+    public function admin_filtrar_by_admin(Request $request){
+
+        if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+        $id_admin = $request->input('id_admin');
+        $reservas = Reserva::all()->where('id_admin', '=' , $id_admin); 
+        return view('super_admin_table_reservas', compact('reservas'));
+    }
+
     public function cliente_dashboard()
     {
         
@@ -280,8 +295,9 @@ class ReservaController extends Controller
         if (Auth::user()->role !== 'admin') {
                 return view('welcome');
             }
-        $input = $request->all();
         $reserva = Reserva::find($id);
+        $input = $request->all();
+        $input['id_admin'] = Auth::user()->email;
         $reserva->update($input);
         return redirect()->route('admin_dashboard')->with('status', 'Reserva actualizada exitosamente');
     }
@@ -295,6 +311,37 @@ class ReservaController extends Controller
        $reserva = Reserva::where('email' , Auth::user()->email)->where('id', $id);
        $reserva->delete();
        return redirect()->route('cliente_dashboard')->with('status','Reserva eliminada');
+    }
+
+       public function super_admin_filtrar_fecha(Request $request){
+
+        if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+        $fecha = $request->input('reservation_date');
+        $reservas = Reserva::all()->where('reservation_date', '=' , $fecha); 
+        return view('super_admin_table_reservas', compact('reservas'));
+    }
+
+     public function super_admin_filtrar_email(Request $request){
+
+        if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+        $email = $request->input('email');
+        $reservas = Reserva::all()->where('email', '=' , $email); 
+        return view('super_admin_table_reservas', compact('reservas'));
+    }
+    
+     public function show_superadmin_reservas()
+    {
+         if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+            //reservas para hoy ordenadas por fecha y hora    
+            $reservas = Reserva::orderBy('reservation_date', 'desc')->orderBy('reservation_time', 'desc')->get();
+
+         return view('super_admin_table_reservas', compact('reservas'));
     }
 
     public function reporte_reservas_tomorrow()

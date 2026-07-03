@@ -231,7 +231,7 @@ const peopleSelected =
             );
 
             window.open(
-                `https://wa.me/51999999999?text=${mensaje}`
+                `https://wa.me/51946452405?text=${mensaje}`  
                 
             );
 

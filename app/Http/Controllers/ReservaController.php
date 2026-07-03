@@ -121,6 +121,11 @@ class ReservaController extends Controller
         return view('reservas_error');
     }
 
+     public function reservas_error_admin()
+    {
+        return view('reservas_error_interno');
+    }
+
      public function admin_login()
     {
         
@@ -158,11 +163,20 @@ class ReservaController extends Controller
     public function admin_create_reserva(Request $request)
     {   
         $input = $request->all();
+        $existe = Reserva::where([
+        'name' => $input['name'],
+        'reservation_date' => $input['reservation_date']        
+        ])->exists();
+
+        if ( $existe ) {
+              return redirect()->route('reservas_error_admin');
+        }else{
+       
         $input['role'] = 'cliente'; 
         $input['id_admin'] = Auth::user()->email;
         $reservation = Reserva::create($input);
         return redirect()->route('admin_dashboard')->with('status', 'Reserva creada exitosamente'); 
-       
+        }
     }
 
     public function admin_update_state(Request $request, $id)

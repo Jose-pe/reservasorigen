@@ -27,6 +27,7 @@ Route::get('/reservas_confirmacion', [App\Http\Controllers\ReservaController::cl
 Route::post('/guardar_reserva', [App\Http\Controllers\ReservaController::class, 'store'])->middleware('auth')->name('guardar_reserva');
 Route::get('/finalizar_reserva', [App\Http\Controllers\ReservaController::class, 'finalizar_reserva'])->middleware('auth')->name('finalizar_reserva');
 Route::get('/reservas_error', [App\Http\Controllers\ReservaController::class, 'reservas_error'])->name('reservas_error');
+Route::get('/reservas_error_admin', [App\Http\Controllers\ReservaController::class, 'reservas_error_admin'])->name('reservas_error_admin');
 Route::get('/reservas_telefono', [App\Http\Controllers\ReservaController::class, 'reservas_telefono'])->name('reservas_telefono');
 Route::get('/cliente_dashboard', [App\Http\Controllers\ReservaController::class, 'cliente_dashboard'])->middleware('auth')->name('cliente_dashboard');
 Route::post('/reserva_delete/{id}', [App\Http\Controllers\ReservaController::class, 'destroy'])->middleware('auth')->name('reserva_delete');

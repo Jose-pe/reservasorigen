@@ -576,7 +576,7 @@
         <button class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-       <form action="{{ route('admin_create_reserva') }}" method="post">
+       <form id="miFormulario" onsubmit="procesarFormulario(event)" action="{{ route('admin_create_reserva') }}" method="post">
           @csrf
           @method('post')
         <input type="hidden" id="editIndex">
@@ -623,7 +623,7 @@
 
       <div class="modal-footer">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button class="btn btn-dark" type="submit">Guardar</button>
+        <button class="btn btn-dark" id="btnGuardarForm" type="submit">Guardar</button>
       </div>
       </form>
     </div>
@@ -655,6 +655,31 @@ function showSection(id){
   document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
   event.target.classList.add('active');
 }
+
+
+  // 1. Obtenemos la fecha de hoy
+  const hoy = new Date();
+  
+  // 2. La formateamos como AAAA-MM-DD
+  const anio = hoy.getFullYear();
+  // El mes empieza en 0 (enero), por lo que sumamos 1 y aseguramos dos dígitos
+  const mes = String(hoy.getMonth() + 1).padStart(2, '0'); 
+  const dia = String(hoy.getDate()).padStart(2, '0');
+  
+  const fechaMinima = `${anio}-${mes}-${dia}`;
+  
+  // 3. Le asignamos ese valor al atributo 'min' del input
+  document.getElementById('reservation_date').min = fechaMinima;
+
+
+function procesarFormulario(event) {
+    // Evitamos que la página se recargue inmediatamente (si vas a usar AJAX/Fetch)
+    // event.preventDefault(); 
+    
+    const boton = document.getElementById('btnGuardarForm');
+    boton.disabled = true;
+    boton.innerText = "Procesando...";
+  }
 </script>
 
 

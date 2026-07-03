@@ -47,14 +47,14 @@
 
                 <div class="card-body p-4">
                     {{-- Formulario apuntando a la ruta update con el método PUT --}}
-                    <form action="{{ route('admin_update_reserva', $reserva->id) }}" method="POST">
+                    <form id="miFormulario" onsubmit="procesarFormulario(event)" action="{{ route('admin_update_reserva', $reserva->id) }}" method="POST">
                         @csrf
                         @method('PUT')
 
                         {{-- Cliente --}}
                         <div class="mb-3">
                             <label for="name" class="form-label text-muted fw-semibold mb-1">Cliente</label>
-                            <input type="text" class="form-control form-control-modern @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $reserva->name) }}" required>
+                            <input type="text" disabled class="form-control form-control-modern @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $reserva->name) }}" required>
                             @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 
@@ -188,7 +188,7 @@
 
                         {{-- Botones de acción --}}
                         <div class="d-flex justify-content-end gap-2 pt-3 border-top">
-                            <button type="submit" class="btn btn-modern-primary text-white px-4 fw-semibold">Guardar Cambios</button>
+                            <button type="submit" id="btnGuardarForm" class="btn btn-modern-primary text-white px-4 fw-semibold">Guardar Cambios</button>
                         </div>
                     </form>
                 </div>
@@ -198,7 +198,30 @@
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+     const hoy = new Date();
+  
+  // 2. La formateamos como AAAA-MM-DD
+  const anio = hoy.getFullYear();
+  // El mes empieza en 0 (enero), por lo que sumamos 1 y aseguramos dos dígitos
+  const mes = String(hoy.getMonth() + 1).padStart(2, '0'); 
+  const dia = String(hoy.getDate()).padStart(2, '0');
+  
+  const fechaMinima = `${anio}-${mes}-${dia}`;
+  
+  // 3. Le asignamos ese valor al atributo 'min' del input
+  document.getElementById('reservation_date').min = fechaMinima;
 
+
+function procesarFormulario(event) {
+    // Evitamos que la página se recargue inmediatamente (si vas a usar AJAX/Fetch)
+    // event.preventDefault(); 
+    
+    const boton = document.getElementById('btnGuardarForm');
+    boton.disabled = true;
+    boton.innerText = "Procesando...";
+  }
+</script>
 </body>
 </html>
 

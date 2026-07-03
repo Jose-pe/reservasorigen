@@ -27,15 +27,15 @@
       <div class="login-content">
 
         <h4 class="title fs-1">
-          <strong>!!! ERROR AL REGISTRAR SU RESERVA !!!</strong>
+          <strong>!!! ERROR AL REGISTRAR ESTA RESERVA!!!</strong>
         </h4>
 
         <p class="subtitle text-danger fw-bolder">
-         USTED YA TIENE UNA RESERVA PARA ESTA FECHA O ALGO SALIO MAL, VUELVA A INTENTERLO.
+         EL CLIENTE YA TIENE UNA RESERVA PARA ESTA FECHA.
         </p>
 
         <!-- GOOGLE -->
-        <a href={{ url('/reservas_comensales') }}  class="email-btn text-decoration-none">
+        <a href={{ url('/admin_dashboard') }}  class="email-btn text-decoration-none">
 
           
 

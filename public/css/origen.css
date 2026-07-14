@@ -38,7 +38,7 @@ img{
 }
 .navbar.scrolled{
   background:#b6583b !important;
-  backdrop-filter: blur(12px);  
+  backdrop-filter: blur(12px) !important;  
   
 }
 
@@ -202,6 +202,7 @@ img{
 }
 
 
+
 .btn-reserva-main:hover{
   background: #b6583b;
   color: #D8B36A;
@@ -213,6 +214,10 @@ img{
    background: url('/img-origen/textura.webp') center/cover repeat;
    color:#D8B36A;   
 }
+
+ #galeria-mobile{
+      display: none !important;
+    }
 
 .button-cartas {
   font-size: 18px;
@@ -472,6 +477,14 @@ h2{
     border-bottom-right-radius: 1rem;
 }
 
+ #galeria-mobile{
+      display: block !important;
+    }
+    #galeria{
+      display: none !important;
+    }
+
+  
     .section p {
         text-align: center !important;
         font-size: .95rem;

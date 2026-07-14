@@ -157,6 +157,46 @@
   </div>
 </section>
 
+<section id="galeria-mobile">
+   <div class="section text-center" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <h2 class="mb-4 mt-3">NUESTRA GALERÍA</h2> 
+    </div>
+  </div>
+<div id="carouselExampleAutoplaying" class="carousel slide m-2" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img-origen/galeria-origen-1.webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img-origen/galeria-origen-2.webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img-origen/galeria-origen-3.webp" class="d-block w-100" alt="...">
+    </div>
+     <div class="carousel-item">
+      <img src="img-origen/galeria-origen-4.webp" class="d-block w-100" alt="...">
+    </div>
+     <div class="carousel-item">
+      <img src="img-origen/galeria-origen-5.webp" class="d-block w-100" alt="...">
+    </div>
+     <div class="carousel-item">
+      <img src="img-origen/galeria-origen-6.webp" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next"  type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon"   aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</section>
+
+
+
 <section class="container px-0 mt-5">
 <p class="text-center">
   <button class="btn-reserva text-uppercase" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">

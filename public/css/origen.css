@@ -338,6 +338,16 @@ img{
    padding-bottom: 1rem;
 }
 
+  #link-galeria{
+      display: block !important;
+    }
+
+    #link-galeria-mobile{
+      display: none !important;
+    }
+
+
+
 /* FOOTER */
 .footer-catedral {
       margin-top: 6rem;
@@ -477,14 +487,7 @@ h2{
     border-bottom-right-radius: 1rem;
 }
 
- #galeria-mobile{
-      display: block !important;
-    }
-    #galeria{
-      display: none !important;
-    }
 
-  
     .section p {
         text-align: center !important;
         font-size: .95rem;
@@ -496,5 +499,19 @@ h2{
         width: 100%;
         text-align: center;
       }
+    #galeria-mobile{
+      display: block !important;
+    }
 
+    #galeria{
+      display: none !important;
+    }
+
+     #link-galeria{
+      display: none !important;
+    }
+
+    #link-galeria-mobile{
+      display: block !important;
+    }
 }

@@ -40,7 +40,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav text-start text-lg-start">
         <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#galeria">Gallery</a>
+         <a class="nav-link"  id="link-galeria"  href="#galeria">Gallery</a>
+        <a class="nav-link" id="link-galeria-mobile" href="#galeria-mobile">Gallery</a>
         <a class="nav-link" href="{{route('reservas_comensales')}}">Reservations</a>
         <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Menu</a>
         <a class="nav-link" href="#contactanos">Contact Us</a>    
@@ -154,6 +155,44 @@
     <div class="col-md-4" data-aos="zoom-in-up" data-aos-duration="2000"><img src="/img-origen/galeria-origen-5.webp" alt="Galería Origen 5" loading="lazy" width="400" height="300"></div>
     <div class="col-md-4" data-aos="zoom-in-up" data-aos-duration="2000"><img src="/img-origen/galeria-origen-6.webp" alt="Galería Origen 6" loading="lazy" width="400" height="300"></div>
   </div>
+</section>
+
+<section id="galeria-mobile">
+   <div class="section text-center" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <h2 class="mb-4 mt-3">OUR GALLERY</h2> 
+    </div>
+  </div>
+<div id="carouselExampleAutoplaying" class="carousel slide m-2" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img-origen/galeria-origen-1.webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img-origen/galeria-origen-2.webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img-origen/galeria-origen-3.webp" class="d-block w-100" alt="...">
+    </div>
+     <div class="carousel-item">
+      <img src="img-origen/galeria-origen-4.webp" class="d-block w-100" alt="...">
+    </div>
+     <div class="carousel-item">
+      <img src="img-origen/galeria-origen-5.webp" class="d-block w-100" alt="...">
+    </div>
+     <div class="carousel-item">
+      <img src="img-origen/galeria-origen-6.webp" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next"  type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon"   aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 </section>
 
 <section class="container px-0 mt-5">

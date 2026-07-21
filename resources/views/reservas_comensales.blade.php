@@ -153,23 +153,6 @@
    
   <script src="/js/reservaciones.js"></script>
    
-  <script>
-    document
-  .getElementById('continueGuests')
-  .addEventListener('click', ()=>{
-
-    // guardar invitados
-    localStorage.setItem(
-      'campoGuests',
-      guests
-    );
-    
-
-    // actualizar pill
   
-  });
- 
-    </script>
-
 </body>
 </html>

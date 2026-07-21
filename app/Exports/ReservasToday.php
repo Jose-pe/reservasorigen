@@ -37,6 +37,7 @@ class ReservasToday implements FromQuery, WithHeadings, WithMapping, ShouldAutoS
             'Estado Pago',
             'Estado Reserva',
             'Observación',
+            'Usuario Admin',
             
         ];
     }

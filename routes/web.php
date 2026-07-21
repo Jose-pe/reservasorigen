@@ -48,6 +48,8 @@ Route::get('/admin_filtrar_fecha', [App\Http\Controllers\ReservaController::clas
 Route::get('/admin_filtrar_etiqueta', [App\Http\Controllers\ReservaController::class, 'admin_filtrar_etiqueta'])->middleware('auth','admin')->name('admin_filtrar_etiqueta');
 
 Route::get('/reservas_reporte', [App\Http\Controllers\ReservaController::class, 'reporte_reservas_tomorrow'])->middleware('auth','admin')->name('reservas_reporte');
+Route::get('/reservas_reporte_hoy', [App\Http\Controllers\ReservaController::class, 'reporte_reservas_today'])->middleware('auth','admin')->name('reservas_reporte_hoy');
+
 Route::get('/show_superadmin_reservas', [App\Http\Controllers\ReservaController::class, 'show_superadmin_reservas'])->middleware('auth','admin')->name('show_superadmin_reservas');
 Route::get('/admin_filtrar_by_admin', [App\Http\Controllers\ReservaController::class, 'admin_filtrar_by_admin'])->middleware('auth','admin')->name('admin_filtrar_by_admin');
 Route::get('/super_admin_filtrar_fecha', [App\Http\Controllers\ReservaController::class, 'super_admin_filtrar_fecha'])->middleware('auth','admin')->name('super_admin_filtrar_fecha');

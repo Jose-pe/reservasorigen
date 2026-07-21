@@ -43,12 +43,17 @@
     </div>
     <!-- Main Content -->
     <div class="col-12 p-4">
-          <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="d-flex justify-content-start align-items-center mb-4">
            
-     <a href="{{ route('reservas_reporte') }}" class="btn btn-success d-inline-flex align-items-center gap-2">
+     <a href="{{ route('reservas_reporte') }}" class="btn btn-success d-inline-flex align-items-center gap-2 me-4">
          <i class="fas fa-file-excel"></i> 
         Descargar Reservas para mañana
     </a>
+
+     <a href="{{ route('reservas_reporte_hoy') }}" class="btn btn-success d-inline-flex align-items-center gap-2">
+         <i class="fas fa-file-excel"></i> 
+        Descargar Reservas de hoy
+     </a>
 </div>
       <div class="row">
        

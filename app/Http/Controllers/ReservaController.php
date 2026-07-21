@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Exports\ReservasTomorrow;
+use App\Exports\ReservasToday;
 use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
 
@@ -361,9 +362,18 @@ class ReservaController extends Controller
     public function reporte_reservas_tomorrow()
     {
         // Generamos un nombre dinámico para el archivo con la fecha de mañana
-        $dateStr = Carbon::tomorrow()->format('Y-m-dd');
+        $dateStr = Carbon::tomorrow()->format('Y-m-d');
         $fileName = "reporte_reservas_origen_{$dateStr}.xlsx";
 
         return Excel::download(new ReservasTomorrow, $fileName);
+    }
+
+     public function reporte_reservas_today()
+    {
+        // Generamos un nombre dinámico para el archivo con la fecha de hoy
+        $dateStr = Carbon::today()->format('Y-m-d');
+        $fileName = "reporte_reservas_origen_hoy_{$dateStr}.xlsx";
+
+        return Excel::download(new ReservasToday, $fileName);
     }
 }

@@ -208,7 +208,7 @@
 
 
 
-<section class="container px-0 mt-5">
+{{--<section class="container px-0 mt-5">
 <p class="text-center">
   <button class="btn-reserva text-uppercase" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
      NUESTRAS EXPERIENCIAS <i class="bi bi-chevron-down"></i>
@@ -264,7 +264,7 @@
      VER MENÚ
   </button>
 </div>
-</section>
+</section>--}}
 
 <section class="text-center mt-5 mb-5" id="reservas">
   <h2 class="text-center mb-2" id="title-2">Reserva tu experiencia</h2>

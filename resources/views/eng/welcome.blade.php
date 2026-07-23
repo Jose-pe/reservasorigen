@@ -119,8 +119,10 @@
         <button type="button" class="btn-close" style="background-color: rgba(255, 255, 255, 0.541) !important;" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <a target="_blank" href="/carta-origen/carta_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-utensils"></i> VIEW FOOD MENU</a>  <br><br>
+        <a target="_blank" href="/carta-origen/carta_origen_ingles.pdf" class="menu-link fw-bolder"> <i class="fas fa-utensils"></i> VIEW FOOD MENU</a>  <br><br>
         <a target="_blank" href="/carta-origen/carta_bar_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-wine-bottle"></i> VIEW BAR MENU</a><br><br>
+        <a target="_blank" href="/carta-origen/carta_postres_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-utensils"></i> VIEW DESSERT MENU</a> <br><br>
+        <a target="_blank" href="/carta-origen/carta_vinos_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-wine-glass-empty"></i> VIEW WINE LIST</a><br><br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn p-3 bt-lg" id="btn-mas" data-bs-dismiss="modal">C L O S E</button>         

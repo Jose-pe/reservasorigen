@@ -121,8 +121,8 @@
       <div class="modal-body">
         <a target="_blank" href="/carta-origen/carta_origen_ingles.pdf" class="menu-link fw-bolder"> <i class="fas fa-utensils"></i> VIEW FOOD MENU</a>  <br><br>
         <a target="_blank" href="/carta-origen/carta_bar_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-wine-bottle"></i> VIEW BAR MENU</a><br><br>
-        <a target="_blank" href="/carta-origen/carta_postres_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-utensils"></i> VIEW DESSERT MENU</a> <br><br>
-        <a target="_blank" href="/carta-origen/carta_vinos_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-wine-glass-empty"></i> VIEW WINE LIST</a><br><br>
+        <a target="_blank" href="/carta-origen/carta_postres_origen.pdf" class="menu-link fw-bolder"> <i class="bi bi-cake2-fill"></i> VIEW DESSERTS MENU</a> <br><br>
+        <a target="_blank" href="/carta-origen/carta_vinos_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-wine-glass-empty"></i> VIEW WINES LIST</a><br><br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn p-3 bt-lg" id="btn-mas" data-bs-dismiss="modal">C L O S E</button>         

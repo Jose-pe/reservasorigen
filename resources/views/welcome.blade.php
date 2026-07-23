@@ -120,7 +120,7 @@
       </div>
       <div class="modal-body">
         <a target="_blank" href="/carta-origen/carta_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-utensils"></i> VER CARTA DE MENÚ</a>  <br><br>
-        <a target="_blank" href="/carta-origen/carta_postres_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-utensils"></i> VER CARTA DE POSTRES</a> <br><br>
+        <a target="_blank" href="/carta-origen/carta_postres_origen.pdf" class="menu-link fw-bolder"> <i class="bi bi-cake2-fill"></i> VER CARTA DE POSTRES</a> <br><br>
         <a target="_blank" href="/carta-origen/carta_bar_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-wine-bottle"></i> VER CARTA DE BAR</a><br><br>
         <a target="_blank" href="/carta-origen/carta_vinos_origen.pdf" class="menu-link fw-bolder"> <i class="fas fa-wine-glass-empty"></i> VER CARTA DE VINOS</a><br><br>
 

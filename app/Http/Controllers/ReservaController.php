@@ -91,16 +91,22 @@ class ReservaController extends Controller
          $input['email'] = Auth::user()->email; 
          $input['id_admin'] = 'Usuario Web'; 
          $input['role'] = 'cliente';   
-         
+
+        if (empty($input['guests'])) {
+        return redirect()->route('reservas_error_comensales');
+        }
+
+        // 2. Comprobamos si la reserva ya existe
         $existe = Reserva::where([
-        'email' => $input['email'],
-        'reservation_date' => $input['reservation_date']        
+            'email'            => $input['email'],
+            'reservation_date' => $input['reservation_date']        
         ])->exists();
 
-        if ( $existe ) {
-              return redirect()->route('reservas_error');
-        }else{
-         $reservation = Reserva::create($input);
+        if ($existe) {
+            return redirect()->route('reservas_error');
+        }
+
+        $reservation = Reserva::create($input);
         
         return response()->json([
 
@@ -111,12 +117,18 @@ class ReservaController extends Controller
             'reservation' => $reservation
 
         ], 201);
-        }
-       
 
-       
     }
+    
+        
+       
 
+       
+    
+    public function reservas_error_comensales()
+    {
+        return view('reservas_error_comensales');
+    }
      public function reservas_error()
     {
         return view('reservas_error');

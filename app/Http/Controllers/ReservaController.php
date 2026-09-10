@@ -296,9 +296,20 @@ class ReservaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Reserva $reserva)
+    public function show_reservas_confirmadas(Request $request)
     {
-        //
+         if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+        $id = $request->query('id');
+        $reserva_confirmada = Reserva::whereDate('reservation_date','>=' ,now()->toDateString())
+            ->whereTime('reservation_time', '>=', now()->format('H:i'))
+            ->where('state', 'Confirmado')
+            ->where('id', '=' , $id)
+            ->orderBy('reservation_date', 'asc')
+            ->orderBy('reservation_time', 'asc')
+            ->get();
+        return response()->json($reserva_confirmada);
     }
 
     /**
@@ -387,5 +398,68 @@ class ReservaController extends Controller
         $fileName = "reporte_reservas_origen_hoy_{$dateStr}.xlsx";
 
         return Excel::download(new ReservasToday, $fileName);
+    }
+
+       public function get_reservas_mesas(Request $request)
+    {
+        $request->validate([
+        'fecha' => 'nullable|date_format:Y-m-d',
+        //'hora' => 'required|date_format:H:i',
+    ]);
+
+    $fecha = $request->input('fecha');
+   
+    
+    // Asignamos una duración por defecto de 2 horas
+   // $horaInicio = Carbon::parse($request->input('hora'))->format('H:i');
+   // $horaFin = Carbon::parse($request->input('hora'))->addHours(2)->format('H:i');
+        // 1. Validar los parámetros de entrada
+       $reservations = Reserva::where('state', 'Confirmado') // o 'confirmada' según tu BD
+            ->where('reservation_date', $fecha)
+            ->where('state_asignation', 'unasingnation')            
+            ->get();
+
+        return response()->json([
+            'status' => 'success',
+            'count' => $reservations->count(),
+            'data' => $reservations
+        ], 200);
+    }
+
+     public function update_mesas_asignacion(Request $request, $id){
+        if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+        $reserva = Reserva::find($id);
+        $reserva->state_asignation = "asignado"; 
+        $reserva->save();  
+    }
+
+    public function update_mesas_quitar_asignacion(Request $request, $id){
+        if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+      $reserva = Reserva::find($id);
+    if (!$reserva) {
+        return response()->json(['error' => 'Reserva no encontrada'], 404);
+    }
+
+    $reserva->state_asignation = "unasingnation"; 
+    $reserva->save();  
+
+    return response()->json(['success' => true, 'message' => 'Asignación quitada']);
+    }
+
+
+     public function mesas_atendido_state(Request $request, $id)
+    {  
+         if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+        $reserva = Reserva::find($id);
+        $reserva->state = "Atendido";     
+        $input['id_admin'] = Auth::user()->email;    
+        $reserva->save();
+         return response()->json(['success' => true, 'message' => 'Reserva Atendida']);
     }
 }

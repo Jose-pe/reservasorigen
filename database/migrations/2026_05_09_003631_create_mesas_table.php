@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('mesas', function (Blueprint $table) {
             $table->id();
+            $table->string('number');                  // Ejemplo: 'M1', 'T2', 'B3'
+            $table->integer('capacity');               // Cantidad máx. de comensales
+            $table->enum('shape', ['square', 'round'])->default('square'); // Forma
+            $table->enum('zone', ['salon','mezaninne'])->default('salon'); // Área
+            $table->enum('status', ['disponible', 'ocupada', 'reservada', 'mantenimiento'])->default('disponible');
+            $table->integer('x')->default(100);        // Coordenada X en el plano
+            $table->integer('y')->default(100);        // Coordenada Y en el plano
             $table->timestamps();
         });
     }

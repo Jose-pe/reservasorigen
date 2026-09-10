@@ -56,6 +56,22 @@ Route::get('/admin_filtrar_by_admin', [App\Http\Controllers\ReservaController::c
 Route::get('/super_admin_filtrar_fecha', [App\Http\Controllers\ReservaController::class, 'super_admin_filtrar_fecha'])->middleware('auth','admin')->name('super_admin_filtrar_fecha');
 Route::get('/super_admin_filtrar_email', [App\Http\Controllers\ReservaController::class, 'super_admin_filtrar_email'])->middleware('auth','admin')->name('super_admin_filtrar_email');
 
+//GESTION DE MESAS Y HORAS
+Route::get('/gestion_mesas_query', [App\Http\Controllers\MesaController::class, 'index'])->middleware('auth','admin')->name('gestion_mesas_query');
+Route::get('/gestion_mesas/{id}', [App\Http\Controllers\MesaController::class, 'mostrar_reserva'])->middleware('auth','admin')->name('gestion_mesas');
+Route::get('/listar_mesas', [App\Http\Controllers\MesaController::class, 'getMesasEstado'])->middleware('auth','admin')->name('listar_mesas');
+Route::get('/listar_mesas_json', [App\Http\Controllers\MesaController::class, 'listar_mesas_json'])->middleware('auth','admin')->name('listar_mesas_json');
+Route::post('/guardar_mesas', [App\Http\Controllers\MesaController::class, 'guardar_mesas'])->middleware('auth','admin')->name('guardar_mesas');
+Route::get('/mostrar_reservas_confirmadas', [App\Http\Controllers\ReservaController::class, 'show_reservas_confirmadas'])->middleware('auth','admin')->name('mostrar_reservas_confirmadas');
+Route::get('/get_reservas_mesas', [App\Http\Controllers\ReservaController::class, 'get_reservas_mesas'])->middleware('auth','admin')->name('get_reservas_mesas');
+Route::post('/update_mesas_asignacion/{id}', [App\Http\Controllers\ReservaController::class, 'update_mesas_asignacion'])->middleware('auth','admin')->name('update_mesas_asignacion');
+Route::put('/update_mesas_quitar_asignacion/{id}', [App\Http\Controllers\ReservaController::class, 'update_mesas_quitar_asignacion'])->middleware('auth','admin')->name('update_mesas_quitar_asignacion');
+Route::put('/mesas_atendido_state/{id}', [App\Http\Controllers\ReservaController::class, 'mesas_atendido_state'])->middleware('auth','admin')->name('mesas_atendido_state');
+
+//DETALLE DE RESERVA
+Route::delete('/destroy_detalle_reserva/{id_reserva}', [App\Http\Controllers\DetalleReservasController::class, 'destroy_detalle_reserva'])->middleware('auth','admin')->name('destroy_detalle_reserva');
+Route::post('/guardar_detalle_reserva',[App\Http\Controllers\DetalleReservasController::class, 'store'])->middleware('auth','admin')->name('guardar_detalle_reserva');
+Route::get('/mostrar_porfecha', [App\Http\Controllers\DetalleReservasController::class, 'mostrar_porfecha'])->middleware('auth','admin')->name('/mostrar_porfecha');
 
 Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

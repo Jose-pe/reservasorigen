@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         
-
+/*
        User::create([
             'name' => 'Admin_Reservas',
             'email' => 'admin@origen.com',
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('pass-origen-01'),
         ]);
 
-     /*   User::create([
+        User::create([
             'name' => 'Reservas_General',
             'email' => 'reservas@campanayoc.com',
             'role' => 'admin',
@@ -39,6 +39,12 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('comercial-campanayoc-079'),
         ]);*/
 
+        User::create([
+            'name' => 'Marketing_General',
+            'email' => 'marketing@campanayoc.com',
+            'role' => 'admin',
+            'password' => Hash::make('marketing-campanayoc-081'),
+        ]);
 
     }
 }

@@ -112,7 +112,7 @@
         }
     </style>
 </head>
-<body class="overflow-hidden vh-100 d-flex">
+<body class="vh-100 d-flex">
 
     <!-- BARRA LATERAL DE NAVEGACIÓN PRINCIPAL -->
     <aside class="bg-dark-sidebar border-end border-dark-custom d-flex flex-column justify-content-start flex-shrink-0" style="width: 300px;">
@@ -172,9 +172,9 @@
                 </div>
                
                 <div class="text-secondary"> <input type="date" class="form-control" id="reservation_date_control" name="reservation_date_control"></div>
-                <div class="text-secondary"> <input type="time" class="form-control" id="reservation_time_control" name="reservation_time_control" value="11:00"></div>
+                <div class="text-secondary"> <input type="time" class="form-control" id="reservation_time_control" min="11:00" max="22:30" name="reservation_time_control" value="11:00"></div>
                 <div class="text-secondary"> <input type="time" disabled class="form-control" id="reservation_time_end_control" name="reservation_time_end_control" value="13:00"></div>
- 
+                
                 
             </div>
         </header>
@@ -435,7 +435,6 @@
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/js-mesas/mesas.js"></script>
-    
-    
+   
 </body>
 </html>

@@ -110,6 +110,12 @@
             border-color: #f59e0b !important;
             transform: scale(1.05);
         }
+         @media(max-width: 1625px) {
+        body {
+            zoom: 80% !important;
+            height: 125vh !important;
+        }
+        }
     </style>
 </head>
 <body class="vh-100 d-flex">

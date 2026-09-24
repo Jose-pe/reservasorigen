@@ -131,7 +131,7 @@
         <div class="option-row">
 
           <div class="option-label">
-            Niños menores de 12
+            Niños menores de 7 años
           </div>
 
           <div class="toggle-group">

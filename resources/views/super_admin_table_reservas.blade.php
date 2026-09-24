@@ -33,7 +33,8 @@
     <div class="col-12 p-0 sidebar">
       <h4 class="text-center py-4">🍽 Admin</h4>
       <a href="{{ route('admin_dashboard') }}"><i class="fa-solid fa-gauge-high fa-lg" style="color: rgb(255, 255, 255);"></i> Dashboard</a>
-      <a   href="{{route('admin_filtros')}}"><i class="fa-solid fa-filter fa-lg" style="color: rgb(255, 255, 255);"></i> Más filtros</a>
+      <a  href="{{route('admin_reclamos_index')}}"><i class="fa-brands fa-leanpub fa-lg" style="color: rgb(255, 255, 255);"></i> Quejas y Reclamos </a>
+      <a  href="{{route('admin_filtros')}}"><i class="fa-solid fa-filter fa-lg" style="color: rgb(255, 255, 255);"></i> Más filtros</a>
       <a  class="active" href="{{route('show_superadmin_reservas')}}"><i class="fa-solid fa-users fa-lg" style="color: rgb(255, 255, 255);"></i> Ver registro de actividades</a>
 
       {{-- <a onclick="showSection('mesas')"><i class="bi bi-table"></i> Mesas</a>
@@ -115,7 +116,8 @@
              <span class="input-group-text fw-bolder">Filtrar por Usuario</span>
              <select class="form-control" id="id_admin" name="id_admin" required>
              <option value="" selected disabled>Seleccione la etiqueta</option>
-                             <option value="admin@origen.com">admin@origen.com</option>
+                           <option value="Usuario Web">Reserva web</option>
+                            <option value="admin@origen.com">admin@origen.com</option>
                             <option value="reservas@campanayoc.com">reservas@campanayoc.com</option>
                             <option value="comercial@campanayoc.com">comercial@campanayoc.com</option>               
                             </select>

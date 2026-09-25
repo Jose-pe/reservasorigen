@@ -120,8 +120,8 @@ class MesaController extends Controller
     $horaInicio = $request->input('hora_inicio');
     
     // Asignamos una duración por defecto de 2 horas
-    $horaInicio = Carbon::parse($request->input('hora'))->format('H:i:s');
-    $horaFin = Carbon::parse($request->input('hora'))->addMinutes(0)->format('H:i:s');
+    $horaInicio = Carbon::parse($request->input('hora'))->addMinutes(01)->format('H:i:s');
+    $horaFin = Carbon::parse($request->input('hora'))->addMinutes(01)->format('H:i:s');
 
     // Consultamos las mesas e incluimos su reserva activa en ese rango
     $mesas = Mesa::with(['DetalleReservas' => function ($query) use ($fecha, $horaInicio, $horaFin) {

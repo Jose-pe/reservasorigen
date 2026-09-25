@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\DetalleReservasController;
 use App\Http\Controllers\ReclamoAdminController;
 use App\Http\Controllers\ReclamoController;
 use App\Http\Controllers\MesaController;

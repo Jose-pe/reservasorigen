@@ -721,7 +721,7 @@ async function obtenerReservas(){
         name:name,
         comensales: comensales,
         service: service,
-        ninos: ninos,
+        ninos: ninos = null ?? 0,
         id_reserva: id_reserva,
         reservation_date: reservation_date,
         reservation_time: reservation_time,

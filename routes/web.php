@@ -46,6 +46,7 @@ Route::post('/admin_update_state/{id}', [App\Http\Controllers\ReservaController:
 Route::post('/admin_create_reserva', [App\Http\Controllers\ReservaController::class, 'admin_create_reserva'])->middleware('auth','admin')->name('admin_create_reserva');
 Route::post('/admin_delete_reserva/{id}', [App\Http\Controllers\ReservaController::class, 'admin_delete_state'])->middleware('auth','admin')->name('admin_delete_reserva');
 Route::post('/admin_atendido_state/{id}', [App\Http\Controllers\ReservaController::class, 'admin_atendido_state'])->middleware('auth','admin')->name('admin_atendido_state');
+Route::post('/admin_noshow_state/{id}', [App\Http\Controllers\ReservaController::class, 'admin_noshow_state'])->middleware('auth','admin')->name('admin_noshow_state');
 Route::get('/admin_filtros', [App\Http\Controllers\ReservaController::class, 'admin_filtros'])->middleware('auth','admin')->name('admin_filtros');
 Route::get('/admin_edit_reserva/{id}', [App\Http\Controllers\ReservaController::class, 'admin_edit_reserva'])->middleware('auth','admin')->name('admin_edit_reserva');
 Route::put('/admin_update_reserva/{id}', [App\Http\Controllers\ReservaController::class, 'admin_update_reserva'])->middleware('auth','admin')->name('admin_update_reserva');

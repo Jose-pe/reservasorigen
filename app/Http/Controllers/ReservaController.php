@@ -229,6 +229,19 @@ class ReservaController extends Controller
         $reserva->save();
         return redirect()->back()->with('status', 'Estado de la reserva actualizado');
     }
+
+    
+      public function admin_noshow_state(Request $request, $id)
+    {  
+         if (Auth::user()->role !== 'admin') {
+                return view('welcome');
+            }
+        $reserva = Reserva::find($id);
+        $reserva->state = "No Show";     
+        $input['id_admin'] = Auth::user()->email;    
+        $reserva->save();
+         return redirect()->back()->with('status', 'Estado de la reserva actualizado');
+    }
      
     public function admin_filtros()
     {  
@@ -462,4 +475,5 @@ class ReservaController extends Controller
         $reserva->save();
          return response()->json(['success' => true, 'message' => 'Reserva Atendida']);
     }
+    
 }

@@ -188,6 +188,9 @@
                 @if ($reserva->state === 'Atendido')
                 <td ><a class="badge bg-primary p-2">{{$reserva->state}}</a></td>
                 @endif
+                @if ($reserva->state === 'No Show')
+                <td ><a class="badge bg-dark p-2" >{{$reserva->state}}</a></td>
+                @endif
                
                     <td>{{$reserva->observation}}</td>
                     <td>{{$reserva->id_admin}}</td>

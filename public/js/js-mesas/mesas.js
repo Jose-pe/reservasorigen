@@ -277,7 +277,7 @@ function renderFloorplan() {
 
         tableEl.innerHTML = `
             <div class="fw-bold text-white mb-1 leading-none">${table.number}</div>
-            <div class="fw-semibold opacity-75 mb-1" style="font-size: 9px;">${table.capacity} Pax</div>
+            <div class="fw-semibold opacity-75 mb-1" style="font-size: 13px;">${table.capacity} Pax</div>
             <div class="d-flex align-items-center justify-content-center">${chairsHTML}</div>
         `;
 

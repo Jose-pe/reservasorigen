@@ -237,7 +237,7 @@ class ReservaController extends Controller
                 return view('welcome');
             }
         $reserva = Reserva::find($id);
-        $reserva->state = "No Show";     
+        $reserva->state = "noShow";     
         $input['id_admin'] = Auth::user()->email;    
         $reserva->save();
          return redirect()->back()->with('status', 'Estado de la reserva actualizado');
@@ -264,14 +264,49 @@ class ReservaController extends Controller
         return view('admin_filtros_dashboard', compact('reservas'));
     }
 
-    public function admin_filtrar_fecha(Request $request){
-
+    public function admin_filtrar_fecha(Request $request){ 
         if (Auth::user()->role !== 'admin') {
                 return view('welcome');
             }
-        $fecha = $request->input('reservation_date');
-        $reservas = Reserva::all()->where('reservation_date', '=' , $fecha); 
-        return view('admin_filtros_dashboard', compact('reservas'));
+
+
+    $request->validate([
+        'fecha_inicio' => 'nullable|date|before:fecha_fin',
+        'fecha_fin'    => 'nullable|date|after:fecha_inicio',
+    ], [
+        // Opcional: Mensajes de error personalizados en español
+        'fecha_inicio.before' => 'La fecha de inicio debe ser estrictamente menor a la fecha de fin.',
+        'fecha_fin.after' => 'La fecha de fin debe ser posterior a la fecha de inicio.'
+    ]);
+    // Obtenemos las fechas del formulario (ej. '2026-08-08' y '2026-09-08')
+    $fechaInicio = $request->input('fecha_inicio');
+    $fechaFin = $request->input('fecha_fin');
+
+    // Iniciamos la consulta
+    $query = Reserva::query();
+
+    // Si ambas fechas fueron enviadas, aplicamos el filtro
+    if ($fechaInicio && $fechaFin) {
+        
+        // OPCIÓN A: Si tu columna es de tipo DATE (ej. 'fecha_reserva')
+        $query->whereBetween('reservation_date', [$fechaInicio, $fechaFin]);
+
+        /* 
+        OPCIÓN B: Si filtras por 'created_at' (que incluye horas y minutos), 
+        es mejor forzar la hora al principio y final del día para incluir 
+        el último día completo.
+        
+        $query->whereBetween('created_at', [
+            $fechaInicio . ' 00:00:00', 
+            $fechaFin . ' 23:59:59'
+        ]);
+        */
+    }
+
+    $reservas = $query->orderBy('reservation_date', 'desc')->get();   // Ejecutamos la consulta
+    
+
+    return view('admin_filtros_dashboard', compact('reservas'));
     }
 
     public function admin_filtrar_etiqueta(Request $request){
@@ -365,14 +400,49 @@ class ReservaController extends Controller
        return redirect()->route('cliente_dashboard')->with('status','Reserva eliminada');
     }
 
-       public function super_admin_filtrar_fecha(Request $request){
-
+        public function super_admin_filtrar_fecha(Request $request){ 
         if (Auth::user()->role !== 'admin') {
                 return view('welcome');
             }
-        $fecha = $request->input('reservation_date');
-        $reservas = Reserva::all()->where('reservation_date', '=' , $fecha); 
-        return view('super_admin_table_reservas', compact('reservas'));
+
+
+    $request->validate([
+        'fecha_inicio' => 'nullable|date|before:fecha_fin',
+        'fecha_fin'    => 'nullable|date|after:fecha_inicio',
+    ], [
+        // Opcional: Mensajes de error personalizados en español
+        'fecha_inicio.before' => 'La fecha de inicio debe ser estrictamente menor a la fecha de fin.',
+        'fecha_fin.after' => 'La fecha de fin debe ser posterior a la fecha de inicio.'
+    ]);
+    // Obtenemos las fechas del formulario (ej. '2026-08-08' y '2026-09-08')
+    $fechaInicio = $request->input('fecha_inicio');
+    $fechaFin = $request->input('fecha_fin');
+
+    // Iniciamos la consulta
+    $query = Reserva::query();
+
+    // Si ambas fechas fueron enviadas, aplicamos el filtro
+    if ($fechaInicio && $fechaFin) {
+        
+        // OPCIÓN A: Si tu columna es de tipo DATE (ej. 'fecha_reserva')
+        $query->whereBetween('reservation_date', [$fechaInicio, $fechaFin]);
+
+        /* 
+        OPCIÓN B: Si filtras por 'created_at' (que incluye horas y minutos), 
+        es mejor forzar la hora al principio y final del día para incluir 
+        el último día completo.
+        
+        $query->whereBetween('created_at', [
+            $fechaInicio . ' 00:00:00', 
+            $fechaFin . ' 23:59:59'
+        ]);
+        */
+    }
+
+    $reservas = $query->orderBy('reservation_date', 'desc')->get();   // Ejecutamos la consulta
+    
+
+    return view('super_admin_table_reservas', compact('reservas'));
     }
 
      public function super_admin_filtrar_email(Request $request){

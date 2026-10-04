@@ -19,7 +19,7 @@
     "wdth" 100;
 }
     body { 
-      background-color: #ffffff !important; 
+      background-color: #bdbbbb !important; 
       color: rgb(37, 21, 8) !important;
 
       max-width: 100% !important;
@@ -97,8 +97,8 @@
             </form></div>
         
       </div>
-      <!-- DASHBOARD -->
-      <div id="dashboard" class="section active">
+      <!-- DASHBOARD 
+      <div id="dashboard" class="section active">  -->
         
        
       <!-- Stats -->
@@ -126,7 +126,7 @@
       <!-- Table Reservas -->
       <div class="card shadow pt-5">
         <div class="card-header d-flex justify-content-between align-items-center">
-          <div class="col-4 text-start m-3">
+          <div class="col-3 text-start m-2">
             
             <form action="{{route('super_admin_filtrar_email')}}" method="get">
                  @csrf
@@ -169,7 +169,7 @@
                  </div>
                 
         </form>
-        <div class="col-4 d-flex justify-content-start m-3">
+        <div class="col-3 d-flex justify-content-start m-2">
          <form action="{{route('admin_filtrar_by_admin')}}" method="get">
                 @csrf
                 @method('GET')
@@ -191,8 +191,8 @@
        
         
         </div>
-        <div class="card-body table-responsive">
-          <table class="table table-hover table-striped table-bordered">
+        <div class="card-body table-responsive mt-3 ">
+          <table class="table table-hover table-striped" >
             <thead>
               <tr>
                 <th>Cliente</th>

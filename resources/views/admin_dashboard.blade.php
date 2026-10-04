@@ -22,19 +22,18 @@
     "wdth" 100;
 }
     body { 
-      background-color: #353535 !important; 
-      color: white !important;
+      background-color: #ffffff !important; 
+      color: rgb(37, 21, 8) !important;
 
       max-width: 100% !important;
 
-      font-family: 'Datatype', monospace !important;
-      
+     
       letter-spacing: 0.03rem !important; 
     
     }
-    .sidebar { height: 20vh; background: #1b1b1d; color: white; }
+    .sidebar { height: 20vh; background: #753724; color: white; }
     .sidebar a { color: #ccc; text-decoration: none; display: inline-block; padding: 12px 20px; cursor:pointer; }
-    .sidebar a:hover, .sidebar a.active { background: #2d2e33; color: #f0f0f0; }
+    .sidebar a:hover, .sidebar a.active { background: #80412e; color: #f0f0f0; }
     .card { border-radius: 15px; }
     .section { display:none; }
     .section.active { display:block; }
@@ -43,8 +42,8 @@
     }
       th{
       text-align: center !important;
-      color: rgb(19, 150, 19) !important;
-      font-size: 1.2rem !important;
+      color: rgb(37, 21, 8) !important;
+      font-size: 1rem !important;
       font-weight: bolder !important; 
     }
 
@@ -56,17 +55,17 @@
         font-size: 2.4rem;!important;
     }
     .card{
-      background-color: #1b1b1d !important;
-      color: white !important;
+      background-color: #f1f1f3 !important;
+      color: rgb(37, 21, 8) !important;
     }
 
     .card-header{
-      background-color: #525252 !important;
-      color: white !important;
+      background-color: #fcfcfc !important;
+      color: rgb(37, 21, 8)!important;
 
     }
     .text-muted{
-        color: #ccc !important;
+        color: #573210 !important;
     }
   </style>
 </head>
@@ -78,7 +77,7 @@
     <div class="row">
     <!-- Sidebar -->
     <div class="col-12 p-0 sidebar">
-      <h4 class="text-center py-4">🍽 Admin</h4>
+      <h4 class="text-center py-4">🍽 ORIGEN 🍽</h4>
       <a class="active" onclick="showSection('dashboard', this)"><i class="fa-solid fa-gauge-high fa-lg" style="color: rgb(255, 255, 255);"></i> Dashboard</a>
       <a onclick="showSection('reservas_pendientes', this)"><i class="fa-solid fa-thumbtack fa-lg" style="color: rgb(255, 255, 255);"></i> Reservas pendientes</a>
       <a onclick="showSection('reservas_hoy', this)"><i class="fa-solid fa-calendar-day fa-lg" style="color: rgb(255, 255, 255);"></i> Reservas creadas hoy</a>
@@ -154,7 +153,7 @@
         </div>
         </div>
         <div class="card-body table-responsive">
-          <table class="table table-dark table-hover table-striped">
+          <table class="table table-hover table-striped">
             <thead>
               <tr>
                 <th>Cliente</th>
@@ -251,7 +250,7 @@
       
         </div>
         <div class="card-body table-responsive">
-          <table class="table table-hover table-striped table-dark">
+          <table class="table table-hover table-striped">
             <thead>
               <tr>
                 <th>Cliente</th>
@@ -306,7 +305,7 @@
                 @endif  
 
                 <td>{{$reserva_siguiente->observation}}</td>
-                  <td>           
+                  <td class="d-flex justify-content-center gap-1">           
                  
                     <form action="{{ route('admin_edit_reserva', ['id' => $reserva_siguiente->id]) }}" method="get" style="display:inline-block;">     
                     @csrf
@@ -333,7 +332,7 @@
         <h2 class="mb-4">Reservas</h2>
         <div class="card">
           <div class="card-body table-responsive">              
-          <table class="table table-dark table-hover table-striped">
+          <table class="table table-hover table-striped">
             <thead>
               <tr>
                 <th>Cliente</th>
@@ -418,7 +417,7 @@
         <h2 class="mb-4">Reservas pendientes</h2>
         <div class="card">         
               <div class="card-body table-responsive">
-          <table class="table table-hover table-striped table-dark">
+          <table class="table table-hover table-striped">
             <thead>
               <tr>
                 <th>Cliente</th>
@@ -522,7 +521,7 @@
           
         </div>
         <div class="card-body table-responsive">
-          <table class="table table-hover table-striped table-dark">
+          <table class="table table-hover table-striped">
             <thead>
               <tr>
                 <th>Cliente</th>
@@ -582,7 +581,7 @@
                 <td ><a class="badge bg-primary p-2">{{$reserva_hoy->state}}</a></td>
                 @endif  
                   <td>{{$reserva_hoy->observation}}</td>
-                 <td>
+                 <td class="d-flex justify-content-center gap-2">
                   <form action="{{ route('admin_edit_reserva', ['id' => $reserva_hoy->id]) }}" method="get" style="display:inline-block;">     
                     @csrf
                     @method('GET')           

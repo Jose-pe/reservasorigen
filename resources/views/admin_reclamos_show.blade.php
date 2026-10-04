@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
- <style>
+<style>
 
   .datatype-letra {
   font-family: "Datatype", monospace;
@@ -19,19 +19,18 @@
     "wdth" 100;
 }
     body { 
-      background-color: #353535 !important; 
-      color: white !important;
+      background-color: #ffffff !important; 
+      color: rgb(37, 21, 8) !important;
 
       max-width: 100% !important;
 
-      font-family: 'Datatype', monospace !important;
-      
+     
       letter-spacing: 0.03rem !important; 
     
     }
-    .sidebar { height: 20vh; background: #1b1b1d; color: white; }
+    .sidebar { height: 20vh; background: #753724; color: white; }
     .sidebar a { color: #ccc; text-decoration: none; display: inline-block; padding: 12px 20px; cursor:pointer; }
-    .sidebar a:hover, .sidebar a.active { background: #2d2e33; color: #f0f0f0; }
+    .sidebar a:hover, .sidebar a.active { background: #80412e; color: #f0f0f0; }
     .card { border-radius: 15px; }
     .section { display:none; }
     .section.active { display:block; }
@@ -40,8 +39,8 @@
     }
       th{
       text-align: center !important;
-      color: rgb(19, 150, 19) !important;
-      font-size: 1.2rem !important;
+      color: rgb(37, 21, 8) !important;
+      font-size: 1rem !important;
       font-weight: bolder !important; 
     }
 
@@ -53,17 +52,17 @@
         font-size: 2.4rem;!important;
     }
     .card{
-      background-color: #1b1b1d !important;
-      color: white !important;
+      background-color: #f1f1f3 !important;
+      color: rgb(37, 21, 8) !important;
     }
 
     .card-header{
-      background-color: #525252 !important;
-      color: white !important;
+      background-color: #fcfcfc !important;
+      color: rgb(37, 21, 8)!important;
 
     }
     .text-muted{
-        color: #ccc !important;
+        color: #573210 !important;
     }
   </style>
 
@@ -75,7 +74,7 @@
     <div class="row">
     <!-- Sidebar -->
     <div class="col-12 p-0 sidebar">
-      <h4 class="text-center py-4">🍽 Admin</h4>
+      <h4 class="text-center py-4">🍽 ORIGEN 🍽</h4>
       <a href="{{ route('admin_dashboard') }}"><i class="fa-solid fa-gauge-high fa-lg" style="color: rgb(255, 255, 255);"></i> Dashboard</a>
       <a  href="{{route('admin_reclamos_index')}}"><i class="fa-brands fa-leanpub fa-lg" style="color: rgb(255, 255, 255);"></i> Quejas y Reclamos </a>
        <a  href="{{route('admin_estadisticas_reservas')}}"><i class="fa-solid fa-chart-simple fa-lg" style="color: rgb(255, 255, 255);"></i> Estadisticas </a>
@@ -113,7 +112,7 @@
     <div class="col-lg-8">
         <div class="card border-0 shadow-sm mb-4">
             <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
-                <h5 class="card-title fw-bold m-0 text-warning">
+                <h5 class="card-title fw-bold m-0 text-primary datatype-letra">
                     <i class="bi bi-file-earmark-text me-2"></i>Hoja de Reclamación N° {{ $reclamo->codigo_correlativo }}
                 </h5>
                 <span class="badge {{ $reclamo->estado === 'Atendido' ? 'bg-success' : 'bg-warning text-dark' }} fs-6">

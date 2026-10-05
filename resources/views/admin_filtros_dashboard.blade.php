@@ -140,7 +140,7 @@
         </div>
       <div class="col-2 text-start m-3">
          
-            <form action="{{route('admin_filtrar_fecha')}}" method="GET" class="mb-4">
+            <form action="{{route('admin_filtrar_fecha')}}" method="GET">
                     @csrf
                   @method('GET')
                 
@@ -169,7 +169,7 @@
                  </div>
                 
         </form>
-        <div class="col-3 d-flex justify-content-start m-3">
+        <div class="col-3 text-start m-3">
          <form action="{{route('admin_filtrar_etiqueta')}}" method="get">
                 @csrf
                 @method('GET')
